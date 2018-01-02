@@ -1,0 +1,11 @@
+<div class="categories-show-title">
+  All Items for <%=@category.title %>
+</div>
+<div class="categories-show">
+  <% @category.items.each do |items| %>
+    <%= item.title %>
+    <%= item.description %>
+    <%= item.price %>
+    <%= item.image %>
+  <% end %>
+</div>
