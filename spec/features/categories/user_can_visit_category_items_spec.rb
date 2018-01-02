@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "As a visitor, when I go to /coffee, I go to all items associated with the coffee category" do
   it "displays each coffee item thats in the database" do
-    category = Category.create(title: "Coffee")
+    category = Category.create(title: "coffee")
 
     coffee_1 = Item.create(title: "French Roast", description: "1 Pound of Deliciousio!", price: "$2.95", category: category)
 

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root "welcome#index"
 
 
+  resources :categories, :path => "/", :only => [:show]
+
 
 
   resources :items, only: [:index]
