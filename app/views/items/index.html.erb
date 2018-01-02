@@ -1,0 +1,9 @@
+
+<section>
+  <% @items.each do |item| %>
+  <%= item.title %>
+  <%= item.description %>
+  <%= item.price %>
+  <img src="<%= asset_path(item.image)%>"/>
+  <% end %>
+</section>
