@@ -1,9 +1,11 @@
 
-<section>
+<section class="items">
   <% @items.each do |item| %>
   <%= item.title %>
   <%= item.description %>
   <%= item.price %>
-  <img src="<%= asset_path(item.image)%>"/>
+  <div class="item_image">
+    <img src="<%= asset_path(item.image)%>"/>
+  </div>
   <% end %>
 </section>
