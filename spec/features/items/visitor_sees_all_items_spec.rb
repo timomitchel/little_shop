@@ -4,8 +4,9 @@ describe 'a visitor sees all of shops available items' do
   context 'it visits root' do 
     context 'it clicks all items' do 
       before(:each) do 
-        @item_1 = create(:item)
-        @item_2= create(:item)
+        @category = Category.create(title: 'coffee')
+        @item_1 = create(:item, image: "latte.jpg", category:@category)
+        @item_2 = create(:item, image: "latte.jpg", category:@category)
 
       end
       it 'sees all items displayed' do 
@@ -21,7 +22,6 @@ describe 'a visitor sees all of shops available items' do
         expect(page).to have_content @item_2.title
         expect(page).to have_content @item_2.description
         expect(page).to have_content @item_2.price
-
       end
     end
   end
