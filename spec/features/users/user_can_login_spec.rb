@@ -5,7 +5,7 @@ describe "Registered user logs in" do
     context "they click login link" do
       context "they enter username and password" do
         it "logs in a user" do
-          user = create(:user)
+          user = User.create(username: "1244", password: "1234")
           visit "/"
 
           click_on "Log In"
@@ -15,9 +15,9 @@ describe "Registered user logs in" do
           fill_in "username", with: user.username
           fill_in "password", with: user.password
 
-          click_on "Sign In"
+          click_on "Log In"
 
-          expect(page).to have_content("Welcome, #{user.name}")
+          expect(page).to have_content("Welcome, #{user.username}")
         end
       end
     end
