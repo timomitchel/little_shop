@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   color: white;
+  background: url("http://www.seriouseats.com/images/2015/08/20150818-coffee-beans-shutterstock_71813833.jpg") no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ }
+ .container{
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    justify-content: space-between;
+}
+.center{
+    color: white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.category_links{
+  flex-flow: column;
+  color: red;
+}
+.category_links:hover{
+  color:white;
+  transition-duration: 1.0s;
+}
