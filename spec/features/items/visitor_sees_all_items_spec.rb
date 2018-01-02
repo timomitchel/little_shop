@@ -16,8 +16,8 @@ describe 'a visitor sees all of shops available items' do
 
         expect(current_path).to eq(items_path)
         expect(page).to have_content @item_1.title
-        expect(page).to have_link 'Sign Up'
-        expect(page).to have_link 'Log In'
+        # expect(page).to have_link 'Sign Up'
+        # expect(page).to have_link 'Log In'
         expect(page).to have_content @item_2.title
         expect(page).to have_content @item_2.description
         expect(page).to have_content @item_2.price
