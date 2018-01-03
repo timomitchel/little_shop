@@ -19,6 +19,7 @@
     <% end %>
     Sign Up
   </div>
+    <p>Cart: <%= @cart.total_count %></p>
   </nav>
   <% flash.each do |type, message| %>
     <%= content_tag :div, message, class: type  %>
