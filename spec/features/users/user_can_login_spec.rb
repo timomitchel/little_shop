@@ -17,7 +17,10 @@ describe "Registered user logs in" do
 
           click_on "Log In"
 
-          expect(page).to have_content("Welcome, #{user.username}")
+          expect(current_path).to eq(dashboard_path)
+          expect(page).to have_content("Logged in as #{user.username}")
+          expect(page).to_not have_content("Log In")
+          expect(page).to have_content("Log Out")
         end
       end
     end
