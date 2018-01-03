@@ -11,7 +11,7 @@ describe "As a visitor" do
     it "when I go to items index, it displays an updated cart total and displays a flash message" do
       visit items_path
 
-      click_button("Add Item")
+      click_button("Add to Cart")
 
       expect(page).to have_content("You now have 1 #{@item.title} in your cart!")
     end
