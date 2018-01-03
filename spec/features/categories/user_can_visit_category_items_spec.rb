@@ -10,7 +10,9 @@ describe "As a visitor, when I go to /coffee, I go to all items associated with 
 
     coffee_3 = Item.create(title: "Decaf", description: "1 Pound of Who Drinks this anyways?!", price: "$1.95", category: category)
 
-    visit "/coffee"
+    visit category_path(category.slug)
+
+    expect(current_path).to eq("/#{category.title}")
 
     expect(page).to have_content(coffee_1.title)
     expect(page).to have_content(coffee_1.description)
