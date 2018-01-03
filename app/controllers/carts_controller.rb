@@ -5,8 +5,9 @@ class CartsController < ApplicationController
   def create
     item = Item.find(params[:item_id])
 
-    session[:cart] ||= Hash.new(0)
-    session[:cart][item.id.to_s] = session[:cart][item.id.to_s] + 1
+    @cart.add_item(item.id)
+    session[:cart] = @cart.contents
+
     flash[:notice] = "You now have #{pluralize(session[:cart][item.id.to_s], item.title)} in your cart!"
 
     redirect_to items_path
