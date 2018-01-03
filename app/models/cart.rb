@@ -9,4 +9,16 @@ class Cart
   def total_count
     contents.values.sum
   end
+
+  def add_item(id)
+    contents[id.to_s] += 1
+  end
+
+  def subtract_item(id)
+    contents[id.to_s] -= 1
+  end
+
+  def count_of(id)
+    contents[id.to_s].to_i
+  end
 end
