@@ -15,7 +15,7 @@ describe "Registered user logs in" do
           fill_in "username", with: user.username
           fill_in "password", with: user.password
 
-          click_on "Log In"
+          click_on "Sign In"
 
           expect(current_path).to eq(dashboard_path)
           expect(page).to have_content("Logged in as #{user.username}")
