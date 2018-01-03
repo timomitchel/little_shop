@@ -8,7 +8,7 @@ describe "Registered user logs in" do
           user = User.create(username: "1244", password: "1234")
           visit "/"
 
-          click_on "Log In"
+          click_on "Login"
 
           expect(current_path).to eq(login_path)
 
