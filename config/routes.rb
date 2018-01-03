@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
+  get "/dashboard", to: "users#show"
 
   resources :users, only:[:new, :create, :show]
-  
+
   resources :items, only: [:index]
 
   resources :categories, :path => "/", :only => [:show]

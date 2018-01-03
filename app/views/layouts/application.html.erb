@@ -12,9 +12,13 @@
    <nav class="container">
     <h1>Welcome</h1>
     <div class='log'>
+      <%if current_user == nil %>
       Login
-      Sign Up
-    </div>
+      <% else %>
+      Log Out
+    <% end %>
+    Sign Up
+  </div>
   </nav>
     <%= yield %>
   </body>
