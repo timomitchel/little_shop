@@ -6,6 +6,8 @@
     <%= item.title %>
     <%= item.description %>
     <%= item.price %>
-    <%= item.image %>
+    <div class="item_image">
+      <img src="<%= asset_path(item.image)%>"/>
+    </div>
   <% end %>
 </div>
