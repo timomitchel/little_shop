@@ -23,8 +23,17 @@ class Cart
     contents[id.to_s].to_i
   end
 
+  def subtotal(price, quantity)
+    price * quantity
+  end
+
   def total_price
-    items = Item.where(id: contents.keys)
-    items.inject(0) {|sum, item| item.price * count_of(item.id) + sum}
+    # items = Item.where(id: contents.keys)
+    # items.inject(0) {|sum, item_id, quantity| item_id.price * quantity + sum}
+    result = 0.0
+    contents.each do |id, quantity|
+       result += Item.find(id).price * quantity
+     end
+     result
   end
 end
