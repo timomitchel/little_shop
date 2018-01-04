@@ -15,4 +15,7 @@ Total Price: <%= number_to_currency(@cart.total_price) %>
   <% else %>
     <p>Your Cart is Empty!</p>
   <% end %>
+  <% unless current_user %>
+  <%= link_to "Create Account to Checkout", new_user_path %>
+  <% end  %>
 </div>
