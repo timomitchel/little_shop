@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/dashboard", to: "users#show"
   get '/cart', to: "carts#show"
+  delete '/carts', to: "carts#destroy"
 
   resources :users, only:[:new, :create, :show]
 

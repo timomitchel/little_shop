@@ -8,7 +8,7 @@
     <img src="<%= asset_path(item.image)%>"/>
   </div>
   <div class="cart_button">
-    <%= link_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
+    <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
   </div>
   <% end %>
 </section>

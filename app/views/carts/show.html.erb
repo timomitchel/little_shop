@@ -5,6 +5,7 @@
     <%= item.description %>
     <%= number_to_currency(item.price) %>
   <img src="<%= asset_path(item.image) %>"/>
+  <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
   <% end %> 
 </div>
 
