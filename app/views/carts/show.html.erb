@@ -6,7 +6,9 @@
       Item: <%= item.title %>
       Description: <%= item.description %>
       Price: <%= number_to_currency(item.price) %>
-      Quantity:  <input id="number" type="number" value="<%=(@cart.count_of(item.id)) %>">
+      Quantity: <%= @cart.count_of(item.id) %>
+      <%= link_to "+", cart_add_item_path(item_id: item.id), method: :post %>
+      <%= link_to "-", cart_subtract_item_path(item_id: item.id), method: :post %>
     <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
     <% end %>
 Total Price: <%= number_to_currency(@cart.total_price) %>
