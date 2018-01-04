@@ -25,8 +25,6 @@ class Cart
 
   def total_price
     items = Item.where(id: contents.keys)
-    items.reduce(0) do |sum, item|
-      sum + item.price
-    end
+    items.inject(0) {|sum, item| item.price * count_of(item.id) + sum}
   end
 end

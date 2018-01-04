@@ -9,7 +9,7 @@
       Quantity: <%= @cart.count_of(item.id) %>
     <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
     <% end %>
-Total Price: <%= number_to_currency(@cart.total_price) %>
+Total Price: <%= @cart.total_price %>
   <% else %>
     <p>Your Cart is Empty!</p>
   <% end %>
