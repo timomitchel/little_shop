@@ -2,15 +2,15 @@
 <div class="cart_items">
   <% if @cart.total_count != 0 %>
     <% @items.each do |item| %>
-      <%= item.title %>
-      <%= item.description %>
-      <%= number_to_currency(item.price) %>
     <img src="<%= asset_path(item.image) %>"/>
+      Item: <%= item.title %>
+      Description: <%= item.description %>
+      Price: <%= number_to_currency(item.price) %>
+      Quantity: <%= @cart.count_of(item.id) %>
     <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
-    <% end %> 
+    <% end %>
 Total Price: <%= number_to_currency(@cart.total_price) %>
   <% else %>
     <p>Your Cart is Empty!</p>
   <% end %>
 </div>
-
