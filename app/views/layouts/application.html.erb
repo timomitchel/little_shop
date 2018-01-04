@@ -9,26 +9,26 @@
   </head>
 
   <body>
-    <% if current_user == nil %>
-   <nav class="container">
-    <h1>Welcome</h1>
-    <div class='log'>
-      <%= link_to "Login", login_path%>
-    </div>
-  </nav>
+    <% if current_user.nil? %>
+      <nav class="container">
+        <h1>Welcome</h1>
+        <div class='log'>
+          <%= link_to "Login", login_path%>
+        </div>
+      </nav>
     <% else %>
-    <nav class="container">
-    <h1> Logged in as <%= current_user.username%>!</h1>
-    <div class='log'>
-      Log Out
-      <% end %>
+      <nav class="container">
+        <h1> Logged in as <%= current_user.username%>!</h1>
+        <div class='log'>
+          Log Out
+    <% end %>
           <p>Cart: <%= @cart.total_count %></p>
           <%= link_to 'View Cart', cart_path %>
-    </div>
-  </nav>
-  <% flash.each do |type, message| %>
-    <%= content_tag :div, message, class: type  %>
-  <% end %>
+        </div>
+      </nav>
+      <% flash.each do |type, message| %>
+        <%= content_tag :div, message, class: type  %>
+      <% end %>
     <%= yield %>
   </body>
 </html>
