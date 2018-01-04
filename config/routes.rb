@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/dashboard", to: "users#show"
+  get '/cart', to: "carts#show"
+  delete '/carts', to: "carts#destroy"
 
   resources :users, only:[:new, :create, :show]
 
   resources :items, only: [:index]
 
-  resources :carts, only: [:create]
+  resources :carts, only: [:create, :show]
 
 
   resources :categories, :path => "/", :only => [:show]
