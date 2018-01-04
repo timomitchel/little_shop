@@ -13,4 +13,8 @@ class CartsController < ApplicationController
     redirect_to items_path
   end
 
+  def show
+    @items = Item.where(id: @cart.contents.keys)
+  end
+
 end
