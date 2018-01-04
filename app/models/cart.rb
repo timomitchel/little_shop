@@ -11,11 +11,12 @@ class Cart
   end
 
   def add_item(id)
-    contents[id.to_s] = contents[id.to_s] + 1
+    contents[id.to_s] = (contents[id.to_s] || 0) + 1
   end
 
   def subtract_item(id)
     contents[id.to_s] -= 1
+    contents.delete(id) if contents[id] == 0
   end
 
   def count_of(id)

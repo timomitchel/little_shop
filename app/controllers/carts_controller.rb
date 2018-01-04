@@ -20,9 +20,7 @@ class CartsController < ApplicationController
   def destroy
     @item = Item.find(params[:item_id])
     flash[:success] = "Successfully removed #{@item.title} from your cart!"
-    @cart.subtract_item(@item.id)
-    session[:cart] = @cart.contents
-    @item.destroy
+    @cart.subtract_item(params[:item_id])
     redirect_to cart_path
   end
 
