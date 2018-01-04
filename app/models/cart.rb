@@ -28,8 +28,6 @@ class Cart
   end
 
   def total_price
-    # items = Item.where(id: contents.keys)
-    # items.inject(0) {|sum, item_id, quantity| item_id.price * quantity + sum}
     result = 0.0
     contents.each do |id, quantity|
        result += Item.find(id).price * quantity
