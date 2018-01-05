@@ -18,11 +18,21 @@ describe "User who is an admin logs in and sees admin dashboard" do
       expect(page).to have_content("Admin Dashboard")
     end
   end
-  
+
   context "a default user logs in" do
-    it 'does not allow default user to see admin categories index' do
+    it 'does not allow default user to see admin dashboard' do
       user = create(:user, role: 0)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+      visit admin_dashboard_path
+
+      expect(page).to_not have_content("Admin Dashboard")
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
+
+  context "a visitor that is not logged in" do
+    it "does not allow visitor to see admin dashboard" do
 
       visit admin_dashboard_path
 
