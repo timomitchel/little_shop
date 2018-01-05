@@ -17,7 +17,10 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create, :show, :update]
 
-
   resources :categories, :path => "/", :only => [:show]
 
+  namespace :admin do
+    resources :users, only: [:show]
+    get "/dashboard", to: "users#show"
+  end
 end
