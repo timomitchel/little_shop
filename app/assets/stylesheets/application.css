@@ -19,6 +19,7 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: serif;
  }
  .container{
     display: flex;
@@ -37,11 +38,15 @@
   padding: 10px;
 }
 a{
-  text-decoration-style: dotted;
+  text-decoration: none;
   text-transform: capitalize;
   font-size: xx-large;
   color: white;
   padding: 10px;
+}
+a:hover{
+    color:sandybrown;
+  transition-duration: 1.0s;
 }
 
 nav{
