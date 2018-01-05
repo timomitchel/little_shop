@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   delete '/carts', to: "carts#destroy"
   post '/cart/add_item', to: "carts#add_item"
   post '/cart/subtract_item', to: "carts#subtract_item"
-
+  get '/:category',  to: 'categories#show', param: :slug, as: "category"
   resources :users, only:[:new, :create, :show]
 
   resources :items, only: [:index]
