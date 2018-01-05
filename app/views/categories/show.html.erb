@@ -3,7 +3,7 @@
 </div>
 <div class="categories-show">
   <% @category.items.each do |item| %>
-    <%= item.title %>
+    <%= link_to item.title, item_path(item) %>
     <%= item.description %>
     <%= item.price %>
     <div class="item_image">
