@@ -18,6 +18,6 @@ Total Price: <%= number_to_currency(@cart.total_price) %>
   <% unless current_user %>
     <%= link_to "Login or Create Account to Checkout", login_path %>
   <%else  %>
-    <%= link_to "Checkout" %>
+    <%= link_to "Checkout", user_orders_path(current_user), method: :post %>
   <% end  %>
 </div>
