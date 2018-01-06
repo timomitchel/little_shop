@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :require_current_user, only: [:index, :show]
 
   def index
 
