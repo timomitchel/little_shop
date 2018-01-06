@@ -43,6 +43,11 @@ a{
   font-size: xx-large;
   color: white;
   padding: 10px;
+  border-style: groove;
+  -webkit-border-start-color: darkorange;
+  -webkit-border-end-color: darkorange;
+  -webkit-border-before-color: darkorange;
+  -webkit-border-after-color: darkorange;
 }
 a:hover{
     color:sandybrown;

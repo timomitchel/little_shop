@@ -1,0 +1,12 @@
+<div class="item-show">
+  <%= @item.title %>
+  <%= @item.description %>
+  <%= @item.price %>
+  <div class="item_image">
+    <img src="<%= asset_path(@item.image)%>"/>
+  </div>
+  <div class="cart_button">
+    <%= button_to "Add to Cart", carts_path(item_id: @item.id), class: "btn btn-danger" %>
+  </div>
+</div>
+<%= link_to "All Items", items_path%>
