@@ -13,19 +13,32 @@ describe "As a user" do
 
     it "displays an index of all user orders organized by order ID" do
 
-    visit cart_path
+      visit items_path
 
-    expect(current_path).to eq(cart_path)
-    
-    click_on("Checkout")
+      click_on "Add to Cart"
+      click_on "View Cart"
+      expect(current_path).to eq(cart_path)
 
-    order = Order.create(status: "Paid", created_at: "2017-08-09",user_id: @user.id)
+      click_on("Checkout")
 
-    ItemOrder.create(item_id: @item.id, order_id: order.id)
 
-    expect(current_path).to eq(user_orders_path(@user))
-    expect(page).to have_content("All Orders for #{@user.username}")
-    expect(page).to have_content("#{order.id} placed on #{order.created_at}")
-  end
+      expect(current_path).to eq(user_orders_path(@user))
+      expect(page).to have_content("All Orders for #{@user.username}")
+      expect(page).to have_content("#{@user.orders.first.id} placed on #{@user.orders.first.created_at}")
+
+      visit items_path
+
+      click_on "Add to Cart"
+      click_on "View Cart"
+      expect(current_path).to eq(cart_path)
+
+      click_on("Checkout")
+
+      
+      expect(current_path).to eq(user_orders_path(@user))
+      expect(page).to have_content("All Orders for #{@user.username}")
+      expect(page).to have_content("#{@user.orders.last.id} placed on #{@user.orders.last.created_at}")
+
+    end
 end
 end
