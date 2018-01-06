@@ -19,7 +19,8 @@ class CartsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:item_id])
-    flash[:success] = "Successfully removed #{@item.title} from your cart!"
+    link = "<a href=\"#{url_for(@item)}\">#{@item.title}</a>"
+    flash[:success] = "Successfully removed #{link} from your cart!"
     @cart.subtract_item(params[:item_id])
     redirect_to cart_path
   end

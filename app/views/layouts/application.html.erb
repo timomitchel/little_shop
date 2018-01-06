@@ -24,12 +24,15 @@
         <h1> Logged in as <%= current_user.username%>!</h1>
         <div class='log'>
           <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
+          <%= link_to 'Home', root_path %>
+          <%= link_to 'Shop', items_path %>
+          <%= link_to 'View Cart', cart_path %>
     <% end %>
           <p>Cart: <%= @cart.total_count %></p>
         </div>
       </nav>
       <% flash.each do |type, message| %>
-        <%= content_tag :div, message, class: type  %>
+        <%= content_tag :div, message.html_safe, class: type  %>
       <% end %>
     <%= yield %>
   </body>
