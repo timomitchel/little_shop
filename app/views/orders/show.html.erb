@@ -1,5 +1,12 @@
 <div class="order-show">
   Order Status: <%= @order.status %>
   Date & Time Ordered: <%= @order.created_at %>
+  <% @order.items.each do |item| %>
+  Item Name: <%= item.title %>
+  Item Description: <%= item.description %>
+  Item Price: <%= number_to_currency(item.price) %>
+  Item Image: <%= item.image %>
+  <% end %>
+  Item Subtotal: <%= @order.subtotal %>
   Total Price: <%= @order.total_price %>
 </div>

@@ -10,11 +10,16 @@ describe "As a user" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
-    it "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
+    xit "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
 
       visit items_path
 
       click_on "Add to Cart"
+
+      click_on "Add to Cart"
+
+      click_on "Add to Cart"
+
       click_on "View Cart"
       expect(current_path).to eq(cart_path)
 
@@ -32,16 +37,15 @@ describe "As a user" do
       expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
       expect(page).to have_content("Total Price: #{@user.orders.last.total_price}")
 
-      # expect(page).to have_content("Item Subtotal: #{@cart.subtotal}")
-      #
-      # expect(page).to have_content("Item Name: #{@item.title}")
-      # expect(page).to have_content("Item Description: #{@item.description}")
-      # expect(page).to have_content("Item Image: #{@item.image}")
+      expect(page).to have_content("Item Subtotal: #{@user.orders.last.subtotal}")
+      byebug
+      expect(page).to have_content("Item Name: #{@item.title}")
+      expect(page).to have_content("Item Description: #{@item.description}")
+      expect(page).to have_content("Item Price: $#{@item.price}")
     end
 
-    xit "wont show another users order" do
+    it "wont show another users order" do
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
       visit items_path
 
@@ -51,14 +55,14 @@ describe "As a user" do
 
       click_on "Checkout"
 
-      expect(current_path).to eq('/orders')
-      expect(page).to have_content("##{Order.last.id}")
+      expect(current_path).to eq(user_orders_path(@user))
+      expect(page).to have_content("#{@user.orders.last.id}")
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user2)
 
-      visit "/orders"
+      visit user_orders_path(@user)
 
-      expect(page).not_to have_content("Order ##{Order.last.id}")
+      expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
 end
