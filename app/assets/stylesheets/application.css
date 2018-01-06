@@ -79,3 +79,13 @@ img{
     align-items: center;
     flex-flow: column;
 }
+.success{
+  color: green;
+}
+.item-show{
+  padding: 25px;
+  text-align: center;
+}
+.cart_button{
+  padding: 18px;
+}

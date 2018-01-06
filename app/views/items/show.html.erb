@@ -8,5 +8,7 @@
   <div class="cart_button">
     <%= button_to "Add to Cart", carts_path(item_id: @item.id), class: "btn btn-danger" %>
   </div>
+  <div class="all_items">
+    <%= link_to "All Items", items_path%>
+   </div>
 </div>
-<%= link_to "All Items", items_path%>
