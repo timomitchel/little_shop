@@ -1,0 +1,7 @@
+<div class="order-index">
+  All Orders for <%= current_user.username %>
+  <% current_user.orders.each do |order| %>
+  <%= order.status %> <br>
+<%= order.id %> placed on <%= order.created_at %>
+  <% end %>
+</div>
