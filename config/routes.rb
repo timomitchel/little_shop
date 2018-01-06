@@ -13,11 +13,14 @@ Rails.application.routes.draw do
 
   resources :users, only:[:new, :create, :show]
 
-  resources :items, only: [:index]
+  resources :items, only: [:index, :show]
 
   resources :carts, only: [:create, :show, :update]
 
-  resources :categories, :path => "/", :only => [:show]
+
+
+  get '/:category',  to: 'categories#show', param: :slug, as: "category"
+
 
   namespace :admin do
     resources :users, only: [:show]

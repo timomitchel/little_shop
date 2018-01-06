@@ -17,8 +17,5 @@ class ApplicationController < ActionController::Base
     @cart ||= Cart.new(session[:cart])
   end
 
-  # def current_cart
-  #   @current_cart ||= Cart.find(session[:cart_id]) if session[:cart_id]
-  # end
 
 end

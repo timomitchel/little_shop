@@ -4,10 +4,8 @@ describe "Registered user is logged in" do
     context "they click logout link" do
         it "logs out the user and clears the session" do
           user = User.create(username: "1244", password: "1234")
-          category = Category.create(title: "coffee")
-          coffee_1 = Item.create(title: "French Roast", description: "1 Pound of Deliciousio!", price: "$2.95", image: "latte.jpg",  category: category)
 
-          visit '/'
+          visit root_path
 
           click_on "Login"
 
