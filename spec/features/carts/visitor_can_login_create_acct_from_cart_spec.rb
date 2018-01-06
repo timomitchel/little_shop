@@ -26,11 +26,12 @@ describe "A guest visitor can log in or create accout from cart page" do
       click_on "Add to Cart"
 
       click_on "View Cart"
-      click_on "Create Account to Checkout"
-
+      click_on "Login or Create Account to Checkout"
+      click_on "Create Account"
+      
       fill_in "user[username]", with: "JavaJoe"
       fill_in "user[password]", with: "joe123"
-        click_button "Create Account"
+      click_button "Create Account"
 
       click_on "View Cart"
 
