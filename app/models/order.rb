@@ -13,7 +13,7 @@ class Order < ApplicationRecord
        result += Item.find(id).price * quantity
        ItemOrder.create(item_id: id, order_id: self.id)
      end
-     result
+    result
   end
 
 
@@ -23,5 +23,11 @@ class Order < ApplicationRecord
      result += item.price
     end
     result
+  end
+
+  def subtotal
+    items.collect do |item|
+      Item.where(id: item.id)
+    end
   end
 end
