@@ -19,6 +19,7 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: serif;
  }
  .container{
     display: flex;
@@ -32,14 +33,37 @@
     flex-flow: column wrap;
     align-items: center;
 }
+.log{
+  color: brown;
+  padding: 10px;
+}
+a{
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: xx-large;
+  color: white;
+  padding: 10px;
+}
+a:hover{
+    color:sandybrown;
+  transition-duration: 1.0s;
+}
+
+nav{
+  background: brown;
+}
+h1{
+  color: white
+}
 
 .category_links{
   display: flex;
   flex-flow: column;
-  color: red;
+  font-size: xx-large;
+  color: white;
 }
 .category_links:hover{
-  color:white;
+  color:red;
   transition-duration: 1.0s;
 }
 img{
