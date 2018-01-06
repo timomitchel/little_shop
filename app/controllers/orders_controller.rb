@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-
+    @order = Order.find(params[:id])
   end
 
   def create
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     if order.save
       flash[:success] = "#{order.id} created successfully!"
       order.cart_assignment(session[:cart])
-      # session[:cart].clear
+      session[:cart].clear
       redirect_to user_orders_path(current_user)
     else
       flash[:error] = "You had an issue with your order"
