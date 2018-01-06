@@ -10,7 +10,7 @@ describe "As a user" do
       @user_2 = User.create(username:"Java", password: "456", role: 0)
 
     end
-    it "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
+    xit "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
@@ -41,7 +41,7 @@ describe "As a user" do
       expect(page).to have_content("Item Image: #{@item.image}")
     end
 
-    it "wont show another users order" do
+    xit "wont show another users order" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
 
@@ -60,7 +60,7 @@ describe "As a user" do
 
       visit "/orders"
 
-      expect(page).not_to have_content("Order ##{Order.last.id}")  
+      expect(page).not_to have_content("Order ##{Order.last.id}")
     end
   end
 end
