@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   post '/cart/subtract_item', to: "carts#subtract_item"
   
   resources :users, only:[:new, :create, :show]
-  
-  resources :items, only: [:index]
-  
+
+
+  resources :items, only: [:index, :show]
+
+
   resources :carts, only: [:create, :show, :update]
   
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
