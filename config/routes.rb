@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   resources :carts, only: [:create, :show, :update]
 
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
-  resources :categories, :path => "/", :only => [:show]
 
 end
