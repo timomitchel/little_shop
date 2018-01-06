@@ -5,7 +5,6 @@ describe "As a user" do
     before :each do
       @category = create(:category)
       @item = create(:item, image: "latte.jpg", category: @category)
-      @cart = Cart.new(@item.id => 1)
       @user = User.create(username:"TYJ", password: "123", role: 0)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
