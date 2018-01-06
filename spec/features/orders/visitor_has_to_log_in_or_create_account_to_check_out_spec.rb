@@ -57,3 +57,4 @@ describe "As a visitor" do
     expect(page).to have_content(@cart.title)
   end
 end
+end

@@ -27,3 +27,4 @@ describe "As a user" do
     expect(page).to have_content("#{order.id} placed on #{order.date_time}")
   end
 end
+end
