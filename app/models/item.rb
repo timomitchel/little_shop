@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-
+  validates_presence_of :title, :description, :price, :category_id
+  validates_uniqueness_of :title
 
   belongs_to :category
 
