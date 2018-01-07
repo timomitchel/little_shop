@@ -2,7 +2,11 @@
 <div class="cart_items">
   <% if @cart.total_count != 0 %>
     <% @items.each do |item| %>
+    <% if item.image.nil? %>
+    No image exists
+    <% else %>
     <img src="<%= asset_path(item.image) %>"/>
+    <% end %>
       Item: <%= item.title %>
       Description: <%= item.description %>
       Price: <%= number_to_currency(item.price) %>
