@@ -60,7 +60,18 @@ nav{
 h1{
   color: white
 }
-
+.items{
+  padding: 10px;
+}
+.categories-show-title{
+  text-align: center;
+  font-size: x-large;
+  
+}
+.cart{
+  text-align: center;
+  font-size: x-large;
+}
 .category_links{
   display: flex;
   flex-flow: column;
