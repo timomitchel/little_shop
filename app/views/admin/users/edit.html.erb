@@ -1,0 +1,16 @@
+<%= form_for [:admin, current_user] do |f| %>
+
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.label :fullname %>
+  <%= f.text_field :fullname %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.submit "Submit" %>
+<% end %>
