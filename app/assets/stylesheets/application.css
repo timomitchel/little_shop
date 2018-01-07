@@ -60,6 +60,9 @@ nav{
 h1{
   color: white
 }
+.header_login{
+  margin-left: 170px;
+}
 .items{
   padding: 10px;
 }
@@ -69,6 +72,9 @@ h1{
 }
 .login{
   padding: 25px;
+}
+.create_account{
+  margin-left: 115px;
 }
 .cart{
   text-align: center;

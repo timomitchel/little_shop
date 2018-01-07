@@ -1,4 +1,5 @@
-<h1> Log In! </h1>
+<h1 class="header_login"> Log In! </h1>
+<div class="all">
 <div class="login">
   <%= form_tag do  %>
   <%= label_tag :username %>
@@ -8,5 +9,7 @@
     <%= submit_tag "Sign In" %>
   <% end %>
 </div>
-
+<div class="create_account">
 <%= link_to 'Create Account', new_user_path %>
+</div>
+</div>
