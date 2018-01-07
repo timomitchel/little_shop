@@ -35,5 +35,12 @@ RSpec.describe Item, type: :model do
 
       expect(item).to be_valid
     end
+
+    it "cannot save a valid item with a price of 0" do
+      category = create(:category)
+      item = Item.new(title: "Coffee", description: "bueno", price: 0, category: category)
+
+      expect(item).to be_invalid
+    end
   end
 end
