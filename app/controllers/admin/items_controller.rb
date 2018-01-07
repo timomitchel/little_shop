@@ -22,7 +22,8 @@ class Admin::ItemsController < Admin::BaseController
   end
 
   def update
-    @item = Item.update(params[:id], item_params)
+    @item = Item.find(params[:id])
+    @item.update(item_params)
     if @item.save
       flash[:success] = "#{@item.title} updated!"
       redirect_to admin_items_path
