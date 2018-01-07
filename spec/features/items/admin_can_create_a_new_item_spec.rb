@@ -6,6 +6,7 @@ describe "Admin creates a new item" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     category = Category.create(title: "Tea")
     category2 = Category.create(title: "Coffee")
+    
     visit new_admin_item_path
 
     fill_in "item[title]", with: "Earl Grey"
@@ -14,7 +15,7 @@ describe "Admin creates a new item" do
     select category.title, from: "item[category_id]"
     click_button "Create Item"
 
-    expect(current_path).to eq(items_path)
+    expect(current_path).to eq(admin_items_path)
     expect(page).to have_content("Earl Grey")
     expect(page).to have_content("Yummy")
     expect(page).to have_content("2.1")
