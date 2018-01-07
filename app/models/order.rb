@@ -14,6 +14,7 @@ class Order < ApplicationRecord
        ItemOrder.create(item_id: id, order_id: self.id)
      end
     result
+    byebug
   end
 
 
