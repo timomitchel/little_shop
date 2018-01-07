@@ -1,1 +1,9 @@
-<h1>Admin Dashboard</h1>
+<div class="">
+  <h1>Admin Dashboard</h1>
+  <br>
+  Full Name: <%= current_user.fullname %>
+  <br>
+  Address: <%= current_user.address %>
+  <br>
+  <%= link_to "Edit Account Details", edit_admin_user_path(current_user)  %>
+</div>
