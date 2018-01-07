@@ -28,7 +28,7 @@
           <%= link_to 'Shop', items_path %>
           <%= link_to 'View Cart', cart_path %>
     <% end %>
-          <p>Cart: <%= @cart.total_count %></p>
+          <p class="cart">Cart: <%= @cart.total_count %></p>
         </div>
       </nav>
       <% flash.each do |type, message| %>

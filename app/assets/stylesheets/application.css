@@ -60,7 +60,26 @@ nav{
 h1{
   color: white
 }
-
+.header_login{
+  margin-left: 170px;
+}
+.items{
+  padding: 10px;
+}
+.categories-show-title{
+  text-align: center;
+  font-size: x-large;
+}
+.login{
+  padding: 25px;
+}
+.create_account{
+  margin-left: 115px;
+}
+.cart{
+  text-align: center;
+  font-size: x-large;
+}
 .category_links{
   display: flex;
   flex-flow: column;

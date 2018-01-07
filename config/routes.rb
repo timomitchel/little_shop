@@ -19,13 +19,11 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create, :show, :update]
 
-
-
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
-
 
   namespace :admin do
     resources :users, only: [:show,:edit, :update]
     get "/dashboard", to: "users#show"
+    resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end
