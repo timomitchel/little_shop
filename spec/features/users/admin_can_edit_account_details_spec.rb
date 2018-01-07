@@ -4,7 +4,7 @@ describe "As a Admin User" do
   context "I can go to my admin dashboard" do
     before :each do
       @admin = create(:user, role: 1)
-      @user = User.create(username: "TYJ", password: "123", fullname: "Timothy", address: "2030 Larimer Street")
+      @user_1 = User.create(username: "TYJ", password: "123", fullname: "Timothy", address: "2030 Larimer Street")
 
       visit '/'
       click_on "Login"
@@ -46,11 +46,17 @@ describe "As a Admin User" do
         expect(page).to have_content("2040 Larimer Street")
     end
 
-    xit "should render a 404 if i try to access another users account dashboard or try to modify their details" do
+    it "should render a 404 if i try to access another users account dashboard or try to modify their details" do
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
+
+      visit admin_dashboard_path
+
       expect(page).to have_content("Admin Dashboard")
 
-      visit user_path(@user)
 
+      visit user_path(@user_1)
+      # save_and_open_page
       expect(page).to have_content("The page you were looking for doesn't exist.")
     end
   end
