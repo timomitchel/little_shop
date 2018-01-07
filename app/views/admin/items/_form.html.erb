@@ -1,6 +1,6 @@
 
 <div class="form">
-  <%= form_for [:admin, @item], url: {action: "create"} do |f| %>
+  <%= form_for [:admin, @item] do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
     <%= f.label :description %>
