@@ -136,3 +136,9 @@ img{
 .cart_button{
   padding: 18px;
 }
+
+.items-show {
+  display: flex;
+  flex-flow: row;
+
+}
