@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "User who is an admin logs in and sees admin dashboard" do
   context "an admin logs in" do
-    context "they click on admin dashboard" do 
+    context "they click on admin dashboard" do
     before(:each) do
       @admin = create(:user, role: 1)
       @user = create(:user, role: 0)
@@ -33,7 +33,18 @@ describe "User who is an admin logs in and sees admin dashboard" do
         expect(page).to have_link "Completed"
         expect(page).to have_link "All"
       end
+
+      it 'also displays a link to analytics dashboard, that redirects admin to /admin/analytics-dashboard' do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
+
+        visit admin_dashboard_path
+        
+        click_link "Analytics Dashboard"
+
+        expect(current_path).to eq("/admin/analytics-dashboard")
+
+        expect(page).to have_content("Analytics Dashboard")
+      end
     end
   end
 end
-      
