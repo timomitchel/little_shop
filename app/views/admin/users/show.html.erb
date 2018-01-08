@@ -1,8 +1,15 @@
+
 <h1>Admin Dashboard</h1>
 
 <%= link_to "Add New Item", new_admin_item_path %>
 
 <%= link_to "View All Items", admin_items_path %>
+
+Full Name: <%= current_user.fullname %>
+Address: <%= current_user.address %>
+ 
+<%= link_to "Edit Account Details", edit_admin_user_path(current_user)  %>
+
 <h2>Orders: </h2>
 <div class="orders">
       <% @orders.each do |order| %>
@@ -43,4 +50,3 @@
     <%= link_to 'All', admin_dashboard_path %> : <%= Order.all.count %><br><br><br>
   </table>
 </div>
-

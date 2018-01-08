@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20180108185305) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +53,8 @@ ActiveRecord::Schema.define(version: 20180108185305) do
     t.string "username"
     t.string "password_digest"
     t.integer "role", default: 0
+    t.string "fullname"
+    t.string "address"
   end
 
   add_foreign_key "item_orders", "items"

@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
 
   namespace :admin do
+    resources :users, only: [:show,:edit, :update]
     get "/dashboard", to: "users#show"
     delete "/dashboard", to: "users#destroy"
     post "/dashboard", to: "users#update"
