@@ -11,9 +11,10 @@
     <img src="<%= asset_path(item.image)%>"/>
     <% end %>
   </div>
+  Status: <%= item.status %>
   <div class="cart_button">
     <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
   </div>
-  <%= button_to "Edit", edit_admin_item_path(item) %>
+    <%= button_to "Edit", edit_admin_item_path(item), method: :get %>
   <% end %>
 </section>
