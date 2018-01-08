@@ -14,23 +14,23 @@
         <h1>Welcome to the Keen Bean!</h1>
         <div class='log'>
           <%= link_to 'Home', root_path %>
-          <%= link_to "Login", login_path%>
           <%= link_to 'Shop', items_path %>
           <%= link_to 'View Cart', cart_path %>
+          <%= link_to "Login", login_path%>
         </div>
       </nav>
     <% else %>
       <nav class="container">
         <h1> Logged in as <%= current_user.username%>!</h1>
         <div class='log'>
-          <li><%= link_to 'Log Out', logout_path, :method => :delete %></li>
           <%= link_to 'Home', root_path %>
           <%= link_to 'Shop', items_path %>
           <%= link_to 'View Cart', cart_path %>
+          <%= link_to 'Log Out', logout_path, :method => :delete %>
     <% end %>
-          <p>Cart: <%= @cart.total_count %></p>
         </div>
       </nav>
+      <p class="cart">Cart: <%= @cart.total_count %></p>
       <% flash.each do |type, message| %>
         <%= content_tag :div, message.html_safe, class: type  %>
       <% end %>
