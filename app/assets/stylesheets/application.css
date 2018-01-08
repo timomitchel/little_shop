@@ -142,5 +142,8 @@ img{
 .items-show {
   display: flex;
   flex-flow: row;
-
+}
+.carts-show {
+  display: flex;
+  flex-flow: row;
 }
