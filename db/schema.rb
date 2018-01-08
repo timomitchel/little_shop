@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180108185305) do
   create_table "item_orders", force: :cascade do |t|
     t.bigint "item_id"
     t.bigint "order_id"
-    t.integer "quantity"
+    t.decimal "quantity"
     t.index ["item_id"], name: "index_item_orders_on_item_id"
     t.index ["order_id"], name: "index_item_orders_on_order_id"
   end
