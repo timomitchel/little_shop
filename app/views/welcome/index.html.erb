@@ -1,10 +1,10 @@
 
 
 <section class="center">
-  <section class="category_links">
-    <%= link_to 'all items', items_path %>
-    <% @categories.each do |category| %> 
-      <%= link_to "#{category.title}", category_path(category.title) %>
-    <% end %> 
-  </section>
+  <div class="category_links">
+    <%= link_to 'all items', items_path %><br/>
+    <% @categories.each do |category| %>
+      <%= link_to "#{category.title}", category_path(category.title) %><br/>
+    <% end %>
+  </div>
  </section>

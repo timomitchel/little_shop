@@ -1,8 +1,8 @@
 <div class="categories-show-title">
   All Items for <%=@category.title %>
 </div>
-<div class="categories-show">
   <% @category.items.each do |item| %>
+  <div class="categories-show">
   <div class="items">
     <%= link_to item.title, item_path(item) %>
     <%= item.description %>
@@ -10,9 +10,9 @@
     </div>
     <div class="item_image">
       <img src="<%= asset_path(item.image)%>"/>
-    </div>
-    <div class="cart_button">
-      <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
-    </div>
-  <% end %>
+  </div>
+  <div class="cart_button">
+    <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
+  </div>
 </div>
+  <% end %>
