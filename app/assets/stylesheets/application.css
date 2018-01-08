@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  font-family: "Book Antiqua", serif;
+}
+
+img {
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
  body{
    color: white;
   background: url("http://www.seriouseats.com/images/2015/08/20150818-coffee-beans-shutterstock_71813833.jpg") no-repeat;
@@ -40,7 +50,8 @@
 a{
   text-decoration: none;
   text-transform: capitalize;
-  font-size: xx-large;
+  text-align: center;
+  font-size: x-large;
   color: white;
   padding: 10px;
   border-style: groove;
@@ -53,38 +64,60 @@ a:hover{
     color:sandybrown;
   transition-duration: 1.0s;
 }
+.totals{
+  font-size: x-large;
+}
+.orders{
+  font-size: x-large;  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
 nav{
   background: brown;
 }
 h1{
+  font-size: 35px;
   color: white
 }
-.header_login{
-  margin-left: 170px;
-}
+
 .items{
   padding: 10px;
+}
+.all {
+
+  margin: 0 auto;
+  width: 600px;
+  text-align: center;
+  background-color: #A32C2E;
+  border: 1px solid black;
+}
+
+
+.create_account{
+  text-align: center;
+  padding: 30px;
+
 }
 .categories-show-title{
   text-align: center;
   font-size: x-large;
 }
-.login{
-  padding: 25px;
-}
-.create_account{
-  margin-left: 115px;
-}
 .cart{
-  text-align: center;
+  text-align: right;
   font-size: x-large;
 }
 .category_links{
   display: flex;
   flex-flow: column;
   font-size: xx-large;
+  justify-content: space-around;
   color: white;
+  padding: 30px;
+  margin: 20px;
+  background-color: #A32C2E;
+  border: 1px solid black;
 }
 .category_links:hover{
   color:red;
@@ -97,6 +130,9 @@ img{
     display: inline-flex;
     align-items: center;
     flex-flow: column;
+    margin: 30px;
+    background-color: #A32C2E;
+    border: 1px solid black;
 }
 .success{
   color: green;
@@ -107,4 +143,13 @@ img{
 }
 .cart_button{
   padding: 18px;
+}
+
+.items-show {
+  display: flex;
+  flex-flow: row;
+}
+.carts-show {
+  display: flex;
+  flex-flow: row;
 }

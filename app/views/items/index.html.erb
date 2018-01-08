@@ -2,8 +2,8 @@
 <section class="items">
   <% @items.each do |item| %>
   <%=link_to item.title, item_path(item) %>
-  <%= item.description %>
-  <%= item.price %>
+  <p>Description: <%= item.description %></p>
+  <p>Price: <%= number_to_currency(item.price) %></p>
   <div class="item_image">
     <% if item.image.nil? %>
     <p>No image available</p>

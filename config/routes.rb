@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:show,:edit, :update]
     get "/dashboard", to: "users#show"
+    delete "/dashboard", to: "users#destroy"
+    post "/dashboard", to: "users#update"
     resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end
