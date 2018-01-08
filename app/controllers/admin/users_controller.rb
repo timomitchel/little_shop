@@ -1,6 +1,16 @@
 class Admin::UsersController < Admin::BaseController
   def show
-    @orders = Order.all
+     if params[:type] == "ordered"
+      @orders = Order.ordered
+     elsif params[:type] == "paid"
+      @orders = Order.paid
+     elsif params[:type] == "cancelled"
+      @orders = Order.cancelled
+     elsif params[:type] == "completed"
+      @orders = Order.completed
+     else
+      @orders = Order.all
+     end
   end
 
   def destroy
@@ -22,4 +32,6 @@ class Admin::UsersController < Admin::BaseController
       redirect_to admin_dashboard_path
     end
   end
+
+  
 end

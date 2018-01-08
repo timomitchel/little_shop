@@ -36,10 +36,11 @@
 <div class="totals">
   <h3>Totals: </h3>
   <table>
-    Ordered: <%= Order.ordered_count %> <br>
-    Paid: <%= Order.paid_count %> <br>
-    Cancelled: <%= Order.cancelled_count %> <br>
-    Completed: <%= Order.completed_count %> <br>
+   <%= link_to 'Ordered', admin_dashboard_path(:type => "ordered"), method: :get %>  <%= Order.ordered_count %> <br>
+   <%= link_to 'Paid', admin_dashboard_path(:type => "paid"), method: :get %>  <%= Order.paid_count %> <br>
+    <%= link_to 'Cancelled', admin_dashboard_path(:type => "cancelled"), method: :get %> <%= Order.cancelled_count %> <br>
+    <%= link_to 'Completed', admin_dashboard_path(:type => "completed"), method: :get %> <%= Order.completed_count %> <br>
+    <%= link_to 'All', admin_dashboard_path %>
   </table>
 </div>
 
