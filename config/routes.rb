@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     get "/dashboard", to: "users#show"
     delete "/dashboard", to: "users#destroy"
     post "/dashboard", to: "users#update"
+    get '/analytics-dashboard', to: "analytics#show"
     resources :items, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 end

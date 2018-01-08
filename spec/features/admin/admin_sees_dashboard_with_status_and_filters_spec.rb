@@ -35,6 +35,10 @@ describe "User who is an admin logs in and sees admin dashboard" do
       end
 
       it 'also displays a link to analytics dashboard, that redirects admin to /admin/analytics-dashboard' do
+        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
+
+        visit admin_dashboard_path
+        
         click_link "Analytics Dashboard"
 
         expect(current_path).to eq("/admin/analytics-dashboard")

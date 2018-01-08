@@ -1,5 +1,5 @@
 <h1>Admin Dashboard</h1>
-
+<%= link_to "Analytics Dashboard", admin_analytics_dashboard_path %>
 <%= link_to "Add New Item", new_admin_item_path %>
 
 <%= link_to "View All Items", admin_items_path %>
@@ -17,17 +17,17 @@
         </div>
         <% elsif order.status == "paid" %>
         <div class = "paid">
-          User: <%=order.user.username %><br>    
+          User: <%=order.user.username %><br>
           Status: <%= order.status %><br><br>
-          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br>      
-          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br><br>          
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br>
+          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br><br>
           <%= button_to 'mark as completed', admin_dashboard_path(:update_type => "complete", :order_id => "#{order.id}"), method: :post %><br><br>
           </div>
         <% else %>
         <div class="other">
-          User: <%=order.user.username %><br><br>   
+          User: <%=order.user.username %><br><br>
           Status: <%= order.status %><br><br>
-          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br><br>  
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br><br>
         </div>
        <% end %>
     </div>
@@ -43,4 +43,3 @@
     <%= link_to 'All', admin_dashboard_path %> <%= Order.all.count %><br><br><br>
   </table>
 </div>
-
