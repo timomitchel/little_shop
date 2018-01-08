@@ -1,21 +1,26 @@
 
-<div class="cart_items">
   <% if @cart.total_count != 0 %>
+  <div class="carts-show">
     <% @items.each do |item| %>
+    <div class="items">
     <% if item.image.nil? %>
     No image exists
     <% else %>
     <img src="<%= asset_path(item.image) %>"/>
     <% end %>
-      Item: <%= item.title %>
-      Description: <%= item.description %>
-      Price: <%= number_to_currency(item.price) %>
+      Item: <%= item.title %><br/>
+      Description: <%= item.description %><br/>
+      Price: <%= number_to_currency(item.price) %><br/>
+      <div ="quantity">
       Quantity: <%= @cart.count_of(item.id) %>
       <%= link_to "+", cart_add_item_path(item_id: item.id), method: :post %>
-      <%= link_to "-", cart_subtract_item_path(item_id: item.id), method: :post %>
+      <%= link_to "-", cart_subtract_item_path(item_id: item.id), method: :post %><br/><br/>
+      </div>
     <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
+    </div>
     <% end %>
-Total Price: <%= number_to_currency(@cart.total_price) %>
+  </div>
+Total Price: <%= number_to_currency(@cart.total_price) %> <br/><br/>
   <% else %>
     <p>Your Cart is Empty!</p>
   <% end %>
@@ -24,4 +29,3 @@ Total Price: <%= number_to_currency(@cart.total_price) %>
   <%else  %>
     <%= link_to "Checkout", user_orders_path(current_user), method: :post %>
   <% end  %>
-</div>
