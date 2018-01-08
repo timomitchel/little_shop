@@ -18,7 +18,12 @@
   <div class="cart_button">
     <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
   </div>
-    <%= button_to "Edit", edit_admin_item_path(item), method: :get %>
+    <%= button_to "Edit", edit_admin_item_path(item), method: :get %><br/>
+    <% if item.status == "Active" %>
+      <%= button_to "Retire Item", admin_items_path(:update_status => "#{item.status}", :item_id => "#{item.id}"), method: :patch %>
+    <% else %>
+      <%= button_to "Reactivate Item", admin_items_path(:update_status => "#{item.status}", :item_id => "#{item.id}"), method: :patch %>
+    <% end %>
   </div>
   <% end %>
 </div>
