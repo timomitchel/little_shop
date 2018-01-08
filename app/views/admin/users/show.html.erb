@@ -10,24 +10,24 @@
         <%if order.status == "ordered" %>
         <div class="ordered">
           User: <%=order.user.username %><br>
-          Status: <%= order.status %><br>
-          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>
-          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br>
-          <%= button_to 'mark as paid', admin_dashboard_path(:update_type => "paid", :order_id => "#{order.id}"), method: :post %>
+          Status: <%= order.status %><br><br>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br>
+          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br><br>
+          <%= button_to 'mark as paid', admin_dashboard_path(:update_type => "paid", :order_id => "#{order.id}"), method: :post %><br><br>
         </div>
         <% elsif order.status == "paid" %>
         <div class = "paid">
           User: <%=order.user.username %><br>    
-          Status: <%= order.status %><br>
-          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>      
-          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br>          
-          <%= button_to 'mark as completed', admin_dashboard_path(:update_type => "complete", :order_id => "#{order.id}"), method: :post %>
+          Status: <%= order.status %><br><br>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br>      
+          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br><br>          
+          <%= button_to 'mark as completed', admin_dashboard_path(:update_type => "complete", :order_id => "#{order.id}"), method: :post %><br><br>
           </div>
         <% else %>
         <div class="other">
-          User: <%=order.user.username %><br>    
-          Status: <%= order.status %>
-          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>  
+          User: <%=order.user.username %><br><br>   
+          Status: <%= order.status %><br><br>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br><br><br>  
         </div>
        <% end %>
     </div>
@@ -36,11 +36,11 @@
 <div class="totals">
   <h3>Totals: </h3>
   <table>
-   <%= link_to 'Ordered', admin_dashboard_path(:type => "ordered"), method: :get %>  <%= Order.ordered_count %> <br>
-   <%= link_to 'Paid', admin_dashboard_path(:type => "paid"), method: :get %>  <%= Order.paid_count %> <br>
-    <%= link_to 'Cancelled', admin_dashboard_path(:type => "cancelled"), method: :get %> <%= Order.cancelled_count %> <br>
-    <%= link_to 'Completed', admin_dashboard_path(:type => "completed"), method: :get %> <%= Order.completed_count %> <br>
-    <%= link_to 'All', admin_dashboard_path %>
+   <%= link_to 'Ordered', admin_dashboard_path(:type => "ordered"), method: :get %>  <%= Order.ordered_count %> <br><br><br><br>
+   <%= link_to 'Paid', admin_dashboard_path(:type => "paid"), method: :get %>  <%= Order.paid_count %> <br><br><br>
+    <%= link_to 'Cancelled', admin_dashboard_path(:type => "cancelled"), method: :get %> <%= Order.cancelled_count %> <br><br><br>
+    <%= link_to 'Completed', admin_dashboard_path(:type => "completed"), method: :get %> <%= Order.completed_count %> <br><br><br>
+    <%= link_to 'All', admin_dashboard_path %> <%= Order.all.count %><br><br><br>
   </table>
 </div>
 
