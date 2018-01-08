@@ -21,15 +21,17 @@ describe "User who is an admin logs in and sees admin dashboard" do
 
         expect(page).to have_content ("Orders:")
         expect(page).to have_content ("Totals:")
-        expect(page).to have_content ("Ordered: 2")
-        expect(page).to have_content ("Paid: 1")
-        expect(page).to have_content ("Cancelled: 2")
-        expect(page).to have_content ("Completed: 1")
+        expect(page).to have_content ("2")
+        expect(page).to have_content ("1")
 
-        expect(page).to have_link "cancel"
-        expect(page).to have_link "mark as paid"
-        expect(page).to have_link "mark as completed"
-        save_and_open_page
+        expect(page).to have_button "cancel"
+        expect(page).to have_button "mark as paid"
+        expect(page).to have_button "mark as completed"
+        expect(page).to have_link "Ordered"
+        expect(page).to have_link "Paid"
+        expect(page).to have_link "Cancelled"
+        expect(page).to have_link "Completed"
+        expect(page).to have_link "All"
       end
     end
   end
