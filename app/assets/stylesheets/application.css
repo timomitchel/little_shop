@@ -64,7 +64,9 @@ a:hover{
     color:sandybrown;
   transition-duration: 1.0s;
 }
-
+.totals{
+  font-size: x-large;
+}
 
 nav{
   background: brown;
