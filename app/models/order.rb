@@ -7,6 +7,22 @@ class Order < ApplicationRecord
 
   enum status: ["ordered", "paid", "cancelled", "completed"]
 
+  def self.ordered_count
+    where(status: "ordered").count
+  end
+
+  def self.paid_count
+    where(status: "paid").count
+  end
+
+  def self.cancelled_count
+    where(status: "cancelled").count
+  end
+
+  def self.completed_count
+    where(status: "completed").count
+  end
+
   def cart_assignment(cart)
     result = 0.0
     cart.each do |id, quantity|
@@ -15,7 +31,6 @@ class Order < ApplicationRecord
      end
     result
   end
-
 
   def total_price
     result = 0

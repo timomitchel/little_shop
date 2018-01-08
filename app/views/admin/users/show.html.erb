@@ -3,3 +3,29 @@
 <%= link_to "Add New Item", new_admin_item_path %>
 
 <%= link_to "View All Items", admin_items_path %>
+<h2>Orders: </h2>
+<table class="table_orders">
+  <% @orders.each do |order| %>
+    <tr>User: <%=order.user.username %></tr><br>
+    <tr><%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %></tr><br>
+    <%if order.status == "ordered" %>
+      <tr>Staus: <%= order.status %></tr><br>
+      <tr><%= link_to 'cancel', admin_dashboard_path, method: :delete %></tr><br>
+      <tr><%= link_to 'mark as paid', admin_dashboard_path, method: :post %></tr>
+    <% elsif order.status == "paid" %>
+      <tr>Status: <%= order.status %></tr><br>
+      <tr><%= link_to 'cancel', admin_dashboard_path, method: :delete %></tr><br>
+      <tr><%= link_to 'mark as completed', admin_dashboard_path, method: :post %></tr>
+    <% else %>
+      <tr>Status: <%= order.status %></tr>
+    <% end %>
+  <% end %>
+  </table>
+    <h3>Totals: </h3>
+  <table class="table_totals">
+    <tr>Ordered: <%= Order.ordered_count %> </tr><br>
+    <tr>Paid: <%= Order.paid_count %> </tr><br>
+    <tr>Cancelled: <%= Order.cancelled_count %> </tr><br>
+    <tr>Completed: <%= Order.completed_count %> </tr><br>
+  </table>
+
