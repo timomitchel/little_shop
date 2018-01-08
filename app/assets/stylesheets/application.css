@@ -64,7 +64,15 @@ a:hover{
     color:sandybrown;
   transition-duration: 1.0s;
 }
-
+.totals{
+  font-size: x-large;
+}
+.orders{
+  font-size: x-large;  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
 nav{
   background: brown;
@@ -140,5 +148,8 @@ img{
 .items-show {
   display: flex;
   flex-flow: row;
-
+}
+.carts-show {
+  display: flex;
+  flex-flow: row;
 }
