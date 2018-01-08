@@ -11,8 +11,12 @@
     <img src="<%= asset_path(item.image)%>"/>
     <% end %>
   </div>
-  <div class="cart_button">
+    <% if item.status == "Inactive" %>
+    <p> Item Retired</p>
+    <% else %>
+    <div class="cart_button">
     <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
   </div>
+    <% end %>
   <% end %>
 </section>
