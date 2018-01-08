@@ -1,7 +1,6 @@
-class Admin::UsersController < Admin::BaseController
+class Admin::OrdersController < Admin::BaseController
 
-
-  def show
+def show
      if params[:type] == "ordered"
       @orders = Order.ordered
      elsif params[:type] == "paid"
@@ -21,12 +20,7 @@ class Admin::UsersController < Admin::BaseController
     redirect_to admin_dashboard_path
   end
 
-  def edit
-
-  end
-
   def update
-    current_user.update(user_params)
     order = Order.find(params[:order_id])
     if params[:update_type] == "complete"    
       order.update_status_complete
@@ -40,10 +34,5 @@ class Admin::UsersController < Admin::BaseController
     end
   end
 
-
-  private
-
-    def user_params
-      params.require(:user).permit(:username, :password, :fullname, :address)
-    end
+  
 end
