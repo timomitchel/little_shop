@@ -4,28 +4,42 @@
 
 <%= link_to "View All Items", admin_items_path %>
 <h2>Orders: </h2>
-<table class="table_orders">
-  <% @orders.each do |order| %>
-    <tr>User: <%=order.user.username %></tr><br>
-    <tr><%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %></tr><br>
-    <%if order.status == "ordered" %>
-      <tr>Staus: <%= order.status %></tr><br>
-      <tr><%= link_to 'cancel', admin_dashboard_path, method: :delete %></tr><br>
-      <tr><%= link_to 'mark as paid', admin_dashboard_path, method: :post %></tr>
-    <% elsif order.status == "paid" %>
-      <tr>Status: <%= order.status %></tr><br>
-      <tr><%= link_to 'cancel', admin_dashboard_path, method: :delete %></tr><br>
-      <tr><%= link_to 'mark as completed', admin_dashboard_path, method: :post %></tr>
-    <% else %>
-      <tr>Status: <%= order.status %></tr>
-    <% end %>
-  <% end %>
+<div class="orders">
+      <% @orders.each do |order| %>
+    <div class="elements">
+        <%if order.status == "ordered" %>
+        <div class="ordered">
+          User: <%=order.user.username %><br>
+          Status: <%= order.status %><br>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>
+          <%= button_to 'cancel', admin_dashboard_path, method: :delete %><br>
+          <%= button_to 'mark as paid', admin_dashboard_path, method: :post %>
+        </div>
+        <% elsif order.status == "paid" %>
+        <div class = "paid">
+          User: <%=order.user.username %><br>    
+          Status: <%= order.status %><br>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>      
+          <%= button_to 'cancel', admin_dashboard_path, method: :delete %><br>
+          <%= button_to 'mark as completed', admin_dashboard_path, method: :post %>
+          </div>
+        <% else %>
+        <div class="other">
+          User: <%=order.user.username %><br>    
+          Status: <%= order.status %>
+          <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>  
+        </div>
+       <% end %>
+    </div>
+      <%end %>
+  </div>
+<div class="totals">
+  <h3>Totals: </h3>
+  <table>
+    Ordered: <%= Order.ordered_count %> <br>
+    Paid: <%= Order.paid_count %> <br>
+    Cancelled: <%= Order.cancelled_count %> <br>
+    Completed: <%= Order.completed_count %> <br>
   </table>
-    <h3>Totals: </h3>
-  <table class="table_totals">
-    <tr>Ordered: <%= Order.ordered_count %> </tr><br>
-    <tr>Paid: <%= Order.paid_count %> </tr><br>
-    <tr>Cancelled: <%= Order.cancelled_count %> </tr><br>
-    <tr>Completed: <%= Order.completed_count %> </tr><br>
-  </table>
+</div>
 
