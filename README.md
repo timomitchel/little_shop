@@ -57,21 +57,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 Bundle Install
 
 
-
-2) Executing the Test Suite
-
-:: In order to run the test suite, from command line, run rspec or bundle exec rspec in order to run the test suite.
-
-::If an error message appears in regards to a table or relation that doesnt exist when it clearly exists in the code, please type the following command into the command line.
-
-rake db:test:prepare  
-
-::If you are experiencing an issue with migrations not running due to errors, please type the following commands into your terminal line.
-
-bin/rails db:migrate RAILS_ENV=test
-
-
-3) Migration Commands:
+2) Migration Commands:
 
 Rake command to create database:
 
@@ -88,6 +74,20 @@ rake db:migrate
 Rake command to see database:
 
 rake db:seed
+
+
+
+3) Executing the Test Suite
+
+:: In order to run the test suite, from command line, run rspec or bundle exec rspec in order to run the test suite.
+
+::If an error message appears in regards to a table or relation that doesnt exist when it clearly exists in the code, please type the following command into the command line.
+
+rake db:test:prepare  
+
+::If you are experiencing an issue with migrations not running due to errors, please type the following commands into your terminal line.
+
+bin/rails db:migrate RAILS_ENV=test
 
 4) Heroku Deployment instructions
 
