@@ -10,7 +10,7 @@ describe "As a user" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
-    xit "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
+    it "displays a order details such as item title, item price, description, and image, with order status, total price of order, and date/time of order submission" do
 
       visit items_path
 
@@ -37,8 +37,8 @@ describe "As a user" do
       expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
       expect(page).to have_content("Total Price: #{@user.orders.last.total_price}")
 
-      expect(page).to have_content("Item Subtotal: #{@user.orders.last.subtotal}")
-      byebug
+      expect(page).to have_content("Item Subtotal: $#{@user.orders.last.subtotal}")
+
       expect(page).to have_content("Item Name: #{@item.title}")
       expect(page).to have_content("Item Description: #{@item.description}")
       expect(page).to have_content("Item Price: $#{@item.price}")

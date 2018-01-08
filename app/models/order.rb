@@ -41,8 +41,11 @@ class Order < ApplicationRecord
   end
 
   def subtotal
-    items.collect do |item|
-      Item.where(id: item.id)
+    item_hash = items.group(:item_id).count
+    result = 0
+    item_hash.each do |item, quantity|
+      result += Item.find(item).price * quantity
     end
+    result
   end
 end
