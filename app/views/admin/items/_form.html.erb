@@ -7,6 +7,8 @@
     <%= f.text_field :description %>
     <%= f.label :price %>
     <%= f.number_field :price, :class => 'text_field', step: :any %>
+    <%= f.label :status %>
+    <%= f.select :status, Item.statuses.keys.map { |key| [key.humanize, key] } %>
     <%= f.label :category_id %>
     <%= f.collection_select(:category_id, Category.all, :id, :title) %>
     <%= f.submit %>
