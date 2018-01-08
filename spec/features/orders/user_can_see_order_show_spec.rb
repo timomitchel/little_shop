@@ -37,7 +37,9 @@ describe "As a user" do
       expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
       expect(page).to have_content("Total Price: #{@user.orders.last.total_price}")
 
-      expect(page).to have_content("Item Subtotal: $#{ItemOrder.find_by(order_id: @user.orders.last.id)}")
+
+      expect(page).to have_content("Item Subtotal: $#{(ItemOrder.find_by(order_id: @user.orders.last.id).subtotal)}")
+
 
       expect(page).to have_content("Item Name: #{@item.title}")
       expect(page).to have_content("Item Description: #{@item.description}")

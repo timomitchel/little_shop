@@ -23,11 +23,19 @@ class Order < ApplicationRecord
     where(status: "completed").count
   end
 
+  def update_status_paid
+    update(status: 1)
+  end
+
+  def update_status_complete
+    update(status: 3)
+  end
+
   def cart_assignment(cart)
     result = 0.0
     cart.each do |id, quantity|
        result += Item.find(id).price * quantity
-       ItemOrder.create(item_id: id, order_id: self.id)
+       ItemOrder.create(item_id: id, order_id: self.id, quantity: quantity)
      end
     result
   end
@@ -40,8 +48,13 @@ class Order < ApplicationRecord
     result
   end
 
-  # def subtotal_hash
-  #   byebug
-  #   subtotal_hash = items.group(:item_title).joins(:orders)
-  # end
+  def subtotal
+    item_hash = items.group(:item_id).count
+    result = 0
+    item_hash.each do |item, quantity|
+      result += Item.find(item).price * quantity
+    end
+    result
+  end
+
 end
