@@ -17,7 +17,6 @@ describe "As a user" do
       click_on "Add to Cart"
 
       click_on "Add to Cart"
-
       click_on "Add to Cart"
 
       click_on "View Cart"
@@ -30,6 +29,7 @@ describe "As a user" do
       expect(page).to have_content("All Orders for #{@user.username}")
 
       click_link("#{@user.orders.last.id}")
+      save_and_open_page
 
       expect(current_path).to eq(user_order_path(@user, @user.orders.last.id))
 
@@ -37,7 +37,9 @@ describe "As a user" do
       expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
       expect(page).to have_content("Total Price: #{@user.orders.last.total_price}")
 
-      expect(page).to have_content("Item Subtotal: $#{@user.orders.last.subtotal}")
+
+      expect(page).to have_content("Item Subtotal: $#{(ItemOrder.find_by(order_id: @user.orders.last.id).subtotal)}")
+
 
       expect(page).to have_content("Item Name: #{@item.title}")
       expect(page).to have_content("Item Description: #{@item.description}")
