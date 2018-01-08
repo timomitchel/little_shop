@@ -6,4 +6,8 @@ class User < ApplicationRecord
   enum role: ["default", "admin"]
 
   has_many :orders
+
+  def self.most_orders_placed
+    binding.pry
+  end
 end
