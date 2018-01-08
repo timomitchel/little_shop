@@ -57,7 +57,7 @@ describe "As a Admin User" do
 
       visit user_path(@user_1)
       # save_and_open_page
-      expect(page).to have_content("The page you were looking for doesn't exist.")
+      expect(page).to have_content("#{@admin.username}")
     end
   end
 end
