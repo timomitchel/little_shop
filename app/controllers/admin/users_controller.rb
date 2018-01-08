@@ -27,11 +27,12 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     current_user.update(user_params)
-    order = Order.find(params[:order_id])
-    if params[:update_type] == "complete"    
+    if params[:update_type] == "complete"
+      order = Order.find(params[:order_id])
       order.update_status_complete
       redirect_to admin_dashboard_path
     elsif params[:update_type] == "paid"
+      order = Order.find(params[:order_id])
       order.update_status_paid
       redirect_to admin_dashboard_path
     else
