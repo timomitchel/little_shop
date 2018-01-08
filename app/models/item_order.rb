@@ -4,8 +4,7 @@ class ItemOrder < ApplicationRecord
   belongs_to :order
 
 
-
-  def quantity
-    byebug
+  def subtotal
+    quantity * item.price
   end
 end
