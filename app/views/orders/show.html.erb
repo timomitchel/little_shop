@@ -7,6 +7,6 @@
   Item Price: <%= number_to_currency(item.price) %>
   Item Image: <%= item.image %>
   <% end %>
-  Item Subtotal: <%= @order.subtotal %>
+  Item Subtotal: <%= number_to_currency(@order.subtotal) %>
   Total Price: <%= @order.total_price %>
 </div>
