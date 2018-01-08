@@ -23,6 +23,14 @@ class Order < ApplicationRecord
     where(status: "completed").count
   end
 
+  def update_status_paid
+    update(status: 1)
+  end
+
+  def update_status_complete
+    update(status: 3)
+  end
+
   def cart_assignment(cart)
     result = 0.0
     cart.each do |id, quantity|
