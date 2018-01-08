@@ -6,7 +6,7 @@
   Item Description: <%= item.description %>
   Item Price: <%= number_to_currency(item.price) %>
   Item Image: <%= item.image %>
+  Item Subtotal: <%= number_to_currency(ItemOrder.find_by(order_id: @order, item_id: item.id).subtotal) %>
   <% end %>
-  Item Subtotal: <%= number_to_currency(@order.subtotal_hash) %>
   Total Price: <%= @order.total_price %>
 </div>
