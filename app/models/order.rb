@@ -40,12 +40,8 @@ class Order < ApplicationRecord
     result
   end
 
-  def subtotal
-    item_hash = items.group(:item_id).count
-    result = 0
-    item_hash.each do |item, quantity|
-      result += Item.find(item).price * quantity
-    end
-    result
-  end
+  # def subtotal_hash
+  #   byebug
+  #   subtotal_hash = items.group(:item_title).joins(:orders)
+  # end
 end
