@@ -12,16 +12,16 @@
           User: <%=order.user.username %><br>
           Status: <%= order.status %><br>
           <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>
-          <%= button_to 'cancel', admin_dashboard_path, method: :delete %><br>
-          <%= button_to 'mark as paid', admin_dashboard_path, method: :post %>
+          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br>
+          <%= button_to 'mark as paid', admin_dashboard_path(:update_type => "paid", :order_id => "#{order.id}"), method: :post %>
         </div>
         <% elsif order.status == "paid" %>
         <div class = "paid">
           User: <%=order.user.username %><br>    
           Status: <%= order.status %><br>
           <%= link_to "View Order: #{order.id}", user_order_path(id: order.id, user_id: order.user.id) %><br>      
-          <%= button_to 'cancel', admin_dashboard_path, method: :delete %><br>
-          <%= button_to 'mark as completed', admin_dashboard_path, method: :post %>
+          <%= button_to 'cancel', admin_dashboard_path(:order_id => "#{order.id}"), method: :delete %><br>          
+          <%= button_to 'mark as completed', admin_dashboard_path(:update_type => "complete", :order_id => "#{order.id}"), method: :post %>
           </div>
         <% else %>
         <div class="other">
