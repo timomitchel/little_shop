@@ -17,7 +17,6 @@ describe "As a user" do
       click_on "Add to Cart"
 
       click_on "Add to Cart"
-
       click_on "Add to Cart"
 
       click_on "View Cart"
@@ -30,6 +29,7 @@ describe "As a user" do
       expect(page).to have_content("All Orders for #{@user.username}")
 
       click_link("#{@user.orders.last.id}")
+      save_and_open_page
 
       expect(current_path).to eq(user_order_path(@user, @user.orders.last.id))
 
