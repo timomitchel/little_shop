@@ -67,6 +67,12 @@ a:hover{
 .totals{
   font-size: x-large;
 }
+.orders{
+  font-size: x-large;  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 
 nav{
   background: brown;
