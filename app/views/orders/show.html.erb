@@ -8,7 +8,10 @@
   Item Image: <%= item.image %>
   Item Quantity: <%= (ItemOrder.find_by(order_id: @order, item_id: item.id).quantity) %>
   Item Subtotal: <%= number_to_currency(ItemOrder.find_by(order_id: @order, item_id: item.id).subtotal) %>
+  <div class="item_image">
+    Item Image:<img src="<%= asset_path(item.image)%>"/>
+    </div>
   <% end %>
 
-  Total Price: <%= @order.total_price %>
+  Total Price: <%= number_to_currency(@order.total_price) %>
 </div>
