@@ -35,7 +35,7 @@ describe "As an admin" do
       click_link("Analytics Dashboard")
       expect(current_path).to eq(admin_analytics_dashboard_path)
 
-      expect(page).to have_content("User who has placed the most orders: #{User.most_orders_placed}")
+      expect(page).to have_content("User with most orders: #{User.most_orders_placed}")
 
     end
   end
