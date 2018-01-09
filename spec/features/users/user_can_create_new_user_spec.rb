@@ -9,6 +9,10 @@ describe "User can sign up as a new user" do
 
         fill_in "user[username]", with: "JavaJoe"
         fill_in "user[password]", with: "joe123"
+        fill_in "user[fullname]", with: "Joseph Java"
+        fill_in "user[address]", with: "2030 Larimer Street"
+        fill_in "user[state]", with: "Colorado"
+        
         click_button "Create Account"
 
         expect(current_path).to eq(dashboard_path)

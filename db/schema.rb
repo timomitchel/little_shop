@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180108204235) do
     t.integer "role", default: 0
     t.string "address"
     t.string "fullname"
+    t.string "state"
   end
 
   add_foreign_key "item_orders", "items"
