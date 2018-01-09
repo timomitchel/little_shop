@@ -24,7 +24,7 @@ describe "Registered user logs in" do
 
           expect(page).to have_content("#{user.address}")
           expect(page).to have_content("#{user.state}")
-          expect(page).to have_content("Edit Details")
+          expect(page).to have_content("Edit Account Details")
 
         end
       end

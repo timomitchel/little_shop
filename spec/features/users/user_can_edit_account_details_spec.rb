@@ -22,9 +22,9 @@ describe "As a user" do
 
       expect(page).to have_content("#{user.address}")
       expect(page).to have_content("#{user.state}")
-      expect(page).to have_content("Edit Details")
+      expect(page).to have_content("Edit Account Details")
 
-      click_link("Edit Details")
+      click_link("Edit Account Details")
 
       expect(current_path).to eq(edit_user_path(user))
 
@@ -35,7 +35,7 @@ describe "As a user" do
       fill_in "user[state]", with: "California"
 
       click_on("Edit Details")
-      
+
       expect(current_path).to eq(dashboard_path)
     end
   end

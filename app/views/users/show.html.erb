@@ -3,6 +3,7 @@
   <div class="user-show-information">
     Full Name: <%= current_user.fullname %>
     Address: <%= current_user.address %>
+    State: <%= current_user.state %>
     <%= link_to "Edit Account Details", edit_user_path(current_user) %>
     <%= link_to "Go to your Orders", user_orders_path(@user) %>
   </div>
