@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   has_many :orders
 
-  # def self.most_orders_placed
-  # end
+  def self.most_orders_placed
+    user = joins(:orders).group(:user_id).order('count_id DESC').count('id').first.first
+    User.find(user).username
+  end
+
 end
