@@ -9,6 +9,6 @@ class User < ApplicationRecord
 
   def self.most_orders_placed
     user = joins(:orders).group(:user_id).order('count_id DESC').count('id').first.first
-    User.find(user)
+    User.find(user).username
   end
 end
