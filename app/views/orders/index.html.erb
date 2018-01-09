@@ -4,4 +4,5 @@
   <%= order.status %> <br>
 <%= link_to order.id, user_order_path(current_user, order) %> placed on <%= order.created_at %>
   <% end %>
+  <%= link_to "Go back to your Dashboard", user_path(current_user) %>
 </div>

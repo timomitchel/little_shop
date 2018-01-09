@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/cart/add_item', to: "carts#add_item"
   post '/cart/subtract_item', to: "carts#subtract_item"
 
-  resources :users, only:[:new, :create, :show] do
+  resources :users, only:[:new, :create, :show, :edit, :update] do
     resources :orders, only: [:create, :show, :index]
   end
 
