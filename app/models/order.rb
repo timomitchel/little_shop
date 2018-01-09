@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
 
-  has_many :item_orders, dependent: :destroy
-  has_many :items, through: :item_orders
+  has_many :item_orders, dependent: :delete_all
+  has_many :items, through: :item_orders, dependent: :delete_all
 
   belongs_to :user
 
