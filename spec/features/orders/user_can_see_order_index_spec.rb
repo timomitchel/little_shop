@@ -34,11 +34,20 @@ describe "As a user" do
 
       click_on("Checkout")
 
-      
+
       expect(current_path).to eq(user_orders_path(@user))
       expect(page).to have_content("All Orders for #{@user.username}")
       expect(page).to have_content("#{@user.orders.last.id} placed on #{@user.orders.last.created_at}")
 
+      visit dashboard_path
+      
+      expect(page).to have_content("Go to your Orders")
+
+      click_link "Go to your Orders"
+
+      expect(current_path).to eq(user_orders_path(@user))
+
+      expect(page).to have_content("All Orders for #{@user.username}")
     end
 end
 end
