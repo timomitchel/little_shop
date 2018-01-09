@@ -25,8 +25,11 @@ class Cart
     contents[id.to_s].to_i
   end
 
-  def subtotal(price, quantity)
-    price * quantity
+
+
+  def subtotal(id)
+    item = Item.find(id)
+    item.price * count_of(id)
   end
 
   def total_price

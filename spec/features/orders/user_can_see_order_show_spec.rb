@@ -29,16 +29,17 @@ describe "As a user" do
       expect(page).to have_content("All Orders for #{@user.username}")
 
       click_link("#{@user.orders.last.id}")
-    
+
 
       expect(current_path).to eq(user_order_path(@user, @user.orders.last.id))
 
       expect(page).to have_content("Order Status: #{@user.orders.last.status}")
       expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
-      expect(page).to have_content("Total Price: #{@user.orders.last.total_price}")
+      expect(page).to have_content("Total Price: $#{(@user.orders.last.total_price)}")
 
+      expect(page).to have_content("Item Quantity: #{(ItemOrder.find_by(order_id: @user.orders.last.id, item_id: @item.id).quantity)}")
 
-      expect(page).to have_content("Item Subtotal: $#{(ItemOrder.find_by(order_id: @user.orders.last.id).subtotal)}")
+      expect(page).to have_content("Item Subtotal: $#{(ItemOrder.find_by(order_id: @user.orders.last.id, item_id: @item.id).subtotal)}")
 
 
       expect(page).to have_content("Item Name: #{@item.title}")
@@ -65,6 +66,8 @@ describe "As a user" do
       visit user_orders_path(@user)
 
       expect(page).to have_content("The page you were looking for doesn't exist.")
+
+
     end
   end
 end

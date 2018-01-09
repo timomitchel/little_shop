@@ -22,6 +22,8 @@ describe 'visitor can click on view cart and see items in cart' do
         expect(page).to have_content @item.description
         expect(page).to have_content @item.price
         expect(page).to have_content("Quantity: 1")
+
+      
         expect(page).to have_content "Total Price: $#{@cart.total_price}"
       end
 

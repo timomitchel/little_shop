@@ -24,10 +24,20 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = User.update(user_params)
+
+    redirect_to dashboard_path
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :fullname, :address)
+    params.require(:user).permit(:username, :password, :fullname, :address, :state)
   end
 
 

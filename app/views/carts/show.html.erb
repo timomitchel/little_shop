@@ -16,6 +16,7 @@
       <%= link_to "+", cart_add_item_path(item_id: item.id), method: :post %>
       <%= link_to "-", cart_subtract_item_path(item_id: item.id), method: :post %><br/><br/>
       </div>
+      Item Subtotal: <%= number_to_currency(@cart.subtotal(item.id)) %>
     <%= link_to 'Remove', carts_path(item_id: item.id), method: :delete %>
     </div>
     <% end %>

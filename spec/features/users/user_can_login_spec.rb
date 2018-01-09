@@ -21,6 +21,11 @@ describe "Registered user logs in" do
           expect(page).to have_content("Logged in as #{user.username}")
           expect(page).to_not have_content("Log In")
           expect(page).to have_content("Log Out")
+
+          expect(page).to have_content("#{user.address}")
+          expect(page).to have_content("#{user.state}")
+          expect(page).to have_content("Edit Details")
+
         end
       end
     end
