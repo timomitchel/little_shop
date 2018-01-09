@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post '/cart/add_item', to: "carts#add_item"
   post '/cart/subtract_item', to: "carts#subtract_item"
 
-  resources :users, only:[:new, :create, :show] do
+  resources :users, only:[:new, :create, :show, :edit, :update] do
     resources :orders, only: [:create, :show, :index]
   end
 
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
 
   namespace :admin do
-    resources :users, only: [:show,:edit, :update]
+    resources :users, only: [:show, :edit, :update]
     get "/dashboard", to: "users#show"
     delete "/dashboard", to: "users#destroy"
     post "/dashboard", to: "users#update"
