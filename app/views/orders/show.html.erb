@@ -14,4 +14,5 @@
   <% end %>
 
   Total Price: <%= number_to_currency(@order.total_price) %>
+  <%= link_to "Go back to your Dashboard", user_path(current_user) %>
 </div>
