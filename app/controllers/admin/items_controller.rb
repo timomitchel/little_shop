@@ -32,6 +32,21 @@ class Admin::ItemsController < Admin::BaseController
     end
   end
 
+  def retire
+    item = Item.find(params[:item_id])
+    if params[:update_status] == "Inactive"
+      item.update(status: 0)
+      redirect_to admin_items_path
+    elsif params[:update_status] == "Active"
+      item.update(status: 1)
+      redirect_to admin_items_path
+    else
+      flash[:error] = "The Item could not be updated"
+      redirect_to admin_items_path
+    end
+
+  end
+
   private
 
   def item_params

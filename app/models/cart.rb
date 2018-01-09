@@ -36,4 +36,8 @@ class Cart
      end
      result
   end
+
+  def remove_item(id)
+    contents.delete(id.to_s)
+  end
 end
