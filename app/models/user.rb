@@ -7,7 +7,6 @@ class User < ApplicationRecord
 
   has_many :orders
 
-  def self.most_orders_placed
-    binding.pry
-  end
+  # def self.most_orders_placed
+  # end
 end
