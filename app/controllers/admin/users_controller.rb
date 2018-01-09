@@ -1,6 +1,5 @@
 class Admin::UsersController < Admin::BaseController
 
-
   def show
      if params[:type] == "ordered"
       @orders = Order.ordered

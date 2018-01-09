@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :set_cart
   
 
-  helper_method :current_user
+  helper_method :current_user, :require_current_user
 
 
   def current_user
