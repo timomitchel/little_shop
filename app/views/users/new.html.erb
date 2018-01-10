@@ -1,18 +1,6 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+<div class="form">
+  <h1>Create a New Account!</h1>
+</div>
 
-  <%= f.label :fullname %>
-  <%= f.text_field :fullname %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-
-  <%= f.submit "Create Account" %>
-<% end %>
+<%= render partial: "form" %>
