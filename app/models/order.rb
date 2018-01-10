@@ -59,4 +59,17 @@ class Order < ApplicationRecord
     result
   end
 
+  def self.organize_states
+    order = Order.joins(:user)
+    .where(status: "completed")
+    .order("state ASC")
+    .group(:state).count
+
+  end
+
+  def self.sort_states
+    organize_states.sort_by do |key, value|
+      value
+    end.to_h
+  end
 end
