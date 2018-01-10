@@ -38,9 +38,10 @@ describe "User who is an admin logs in and sees admin dashboard" do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
 
         visit admin_dashboard_path
-
-        click_link "Analytics Dashboard"
-
+        
+        within(".dashboard_links") do 
+          click_link "Analytics Dashboard"
+        end
         expect(current_path).to eq("/admin/analytics-dashboard")
 
         expect(page).to have_content("Analytics Dashboard")
