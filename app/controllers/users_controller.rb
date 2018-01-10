@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :require_current_user, only: [:show]
-  
+
   def new
     @user = User.new
   end
@@ -29,7 +29,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.update(user_params)
+    @user = User.find(params[:id])
+    binding.pry
+    @user.update(user_params)
 
     redirect_to dashboard_path
   end
