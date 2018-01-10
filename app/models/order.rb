@@ -3,6 +3,9 @@ class Order < ApplicationRecord
   has_many :item_orders, dependent: :delete_all
   has_many :items, through: :item_orders, dependent: :delete_all
 
+  belongs_to :category
+
+
   belongs_to :user
 
   enum status: ["ordered", "paid", "cancelled", "completed"]

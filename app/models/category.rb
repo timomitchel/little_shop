@@ -1,6 +1,8 @@
 class Category < ApplicationRecord
   before_save :generate_slug
 
+  has_many :orders
+
   validates :title, presence: true, uniqueness: true
   has_many :items
 
@@ -13,10 +15,6 @@ class Category < ApplicationRecord
   end
 
   def orders_placed
-    item_orders = []
-    items.each do |item|
-     item_orders << ItemOrder.where(item_id: item.id)
-    end
-   item_orders.count
+    orders.count
   end
 end
