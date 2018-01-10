@@ -130,6 +130,7 @@ img{
     display: inline-flex;
     align-items: center;
     flex-flow: column;
+    max-width: 200px;
     margin: 30px;
     background-color: #A32C2E;
     border: 1px solid black;
