@@ -35,4 +35,10 @@ RSpec.describe Cart do
       expect(subject.count_of(2)).to eq(3)
     end
   end
+  describe "subtotal" do
+    it "calculates correct subtotal" do
+      
+      expect(subject.subtotal(10, 5)).to eq(50)
+    end
+  end
 end
