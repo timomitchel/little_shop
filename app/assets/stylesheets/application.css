@@ -130,7 +130,8 @@ img{
     display: inline-flex;
     align-items: center;
     flex-flow: column;
-    max-width: 200px;
+    text-align: center;
+    width: 250px;
     margin: 30px;
     background-color: #A32C2E;
     border: 1px solid black;
@@ -154,7 +155,22 @@ img{
   display: flex;
   flex-flow: row;
 }
+
 .order_elements{
   background-color: #a32c2e;
   padding: 20px;
 }
+
+.back-items {
+  display: flex;
+  justify-content: center;
+
+}
+.back-items a {
+  background-color: #dd5c02;
+  border: none;
+  margin: 20px;
+  border: groove;
+  color: #422101;
+}
+

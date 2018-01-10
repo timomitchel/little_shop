@@ -1,22 +1,30 @@
 
-<section class="items">
+<div class="categories-show">
   <% @items.each do |item| %>
-  <%=link_to item.title, item_path(item) %>
-  <p>Description: <%= item.description %></p>
-  <p>Price: <%= number_to_currency(item.price) %></p>
-  <div class="item_image">
-    <% if item.image.nil? %>
-    <p>No image available</p>
-    <% else %>
-    <img src="<%= asset_path(item.image)%>"/>
+  <div class="items">
+    <%=link_to item.title, item_path(item) %>
+    <p>Description: <%= item.description %></p>
+    <p>Price: <%= number_to_currency(item.price) %></p>
+    <div class="item_image">
+      <% if item.image.nil? %>
+      <p>No image available</p>
+      <% else %>
+      <img src="<%= asset_path(item.image)%>"/>
+      <% end %>
+      <p><%= item.category.title.capitalize %></p>
+    </div>
+      <% if item.status == "Inactive" %>
+      <p> Item Retired</p>
+      <% else %>
+      <div class="cart_button">
+        <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
+      </div>
+      <% end %>
+    </div>
     <% end %>
-  </div>
-    <% if item.status == "Inactive" %>
-    <p> Item Retired</p>
-    <% else %>
-    <div class="cart_button">
-    <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
-  </div>
+</div>
+<div class="back-items">
+  <% @categories.each do |category| %>
+    <%= link_to "#{category.title} Items", category_path(category.title) %>
     <% end %>
-  <% end %>
-</section>
+</div>
