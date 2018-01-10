@@ -34,7 +34,7 @@ describe "As a user" do
       fill_in "user[address]", with: "2138 Larimer Street"
       fill_in "user[state]", with: "California"
 
-      click_on("Edit Details")
+      click_on("Update User")
 
       expect(current_path).to eq(dashboard_path)
     end
