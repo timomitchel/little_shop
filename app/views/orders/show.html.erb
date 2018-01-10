@@ -1,8 +1,11 @@
 <div class="order-show">
+  Ordered by: <%= @order.user.fullname %>
+  Delivery Address: <%= @order.user.address %>
   Order Status: <%= @order.status %>
   Date & Time Ordered: <%= @order.created_at %>
+  Date & Time Order is updated: <%= @order.updated_at %>
   <% @order.items.each do |item| %>
-  Item Name: <%= item.title %>
+  Item Name: <%= link_to item.title, item_path(item) %>
   Item Description: <%= item.description %>
   Item Price: <%= number_to_currency(item.price) %>
   Item Image: <%= item.image %>
