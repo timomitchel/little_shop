@@ -21,6 +21,14 @@ class OrdersController < ApplicationController
       redirect_to cart_path
     end
   end
+  
+  # def find_category_ids(cart)
+  #   items = []
+  #   cart.each_key do |item_id|
+  #     items << Item.find(item_id)
+  #   end
+  #   items
+  # end
 
 
 

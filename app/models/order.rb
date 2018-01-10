@@ -2,9 +2,8 @@ class Order < ApplicationRecord
 
   has_many :item_orders, dependent: :delete_all
   has_many :items, through: :item_orders, dependent: :delete_all
-
-  belongs_to :category
-
+  has_many :category_orders
+  has_many :categories, through: :category_orders
 
   belongs_to :user
 
