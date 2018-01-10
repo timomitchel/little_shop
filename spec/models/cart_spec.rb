@@ -37,8 +37,11 @@ RSpec.describe Cart do
   end
   describe "subtotal" do
     it "calculates correct subtotal" do
-      
-      expect(subject.subtotal(10, 5)).to eq(50)
+      category = Category.create(title: "Coffee")
+      item = Item.create(title: "Coffee", description: "Coffee", price: 1.95, image: 'latte.jpg', category: category)
+      cart = Cart.new({"1" => 2, "2" => 3})
+
+      expect(subject.subtotal(item.id)).to eq(0)
     end
   end
 end
