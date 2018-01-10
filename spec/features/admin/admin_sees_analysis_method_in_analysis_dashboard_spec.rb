@@ -32,7 +32,10 @@ describe "As an admin" do
       
       visit admin_dashboard_path
 
-      click_link("Analytics Dashboard")
+      within(".container") do
+        click_link("Analytics Dashboard")
+      end
+
       expect(current_path).to eq(admin_analytics_dashboard_path)
 
       expect(page).to have_content("User with most orders: #{User.most_orders_placed}")
