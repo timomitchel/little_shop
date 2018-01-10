@@ -1,8 +1,15 @@
 <div class="order-index">
-  All Orders for <%= current_user.username %>
-  <% current_user.orders.each do |order| %>
-  <%= order.status %> <br>
-<%= link_to order.id, user_order_path(current_user, order) %> placed on <%= order.created_at %>
-  <% end %>
-  <%= link_to "Go back to your Dashboard", user_path(current_user) %>
+  <h1>All Orders for <%= current_user.username %>:</h1>
+  <div class="orders">
+    <% current_user.orders.each do |order| %>
+    <div="order_elements">
+     <p>Status:</p><ul><li><%= order.status %></li></ul>  
+     <p><strong>Order ID:</p> <ul><li> <%= link_to order.id, user_order_path(current_user, order) %></li></ul>
+     <p>Date Placed:</p> <ul><li><%= time_tag(order.created_at)%></li></ul>
+    </div>
+    <% end %>
+  </div><br>
+  <div class="user_dash">
+    <%= link_to "User Dashboard", user_path(current_user) %>
+  </div>
 </div>
