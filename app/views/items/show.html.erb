@@ -1,4 +1,4 @@
-<div class="item-show">
+<div class="items">
   <%= @item.title %>
   <%= @item.description %>
   <%= @item.price %>
@@ -6,13 +6,14 @@
     <img src="<%= asset_path(@item.image)%>"/>
   </div>
   <% if @item.status == "Inactive" %>
-  <p> Item Retired</p>
+    <p> Item Retired</p>
   <% else %>
-  <div class="cart_button">
-  <%= button_to "Add to Cart", carts_path(item_id: @item.id), class: "btn btn-danger" %>
-</div>
+    <div class="cart_button">
+      <%= button_to "Add to Cart", carts_path(item_id: @item.id), class: "btn btn-danger" %>
+    </div>
   <% end %>
+
   <div class="all_items">
     <%= link_to "All Items", items_path%>
-   </div>
+  </div>
 </div>
