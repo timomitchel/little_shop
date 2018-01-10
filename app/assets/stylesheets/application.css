@@ -30,6 +30,7 @@ img {
   background-position: center;
   background-size: cover;
   font-family: serif;
+  margin: 0 20px;
  }
  .container{
     display: flex;
@@ -61,22 +62,40 @@ a{
   -webkit-border-after-color: darkorange;
 }
 a:hover{
-    color:sandybrown;
+    color: sandybrown;
   transition-duration: 1.0s;
 }
+.admin-links {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+}
+.admin-links a {
+  background: darkorange;
+  margin: 10px;
+}
+
 .totals{
   font-size: x-large;
 }
 .orders{
-  font-size: x-large;
+  font-size: large;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+
+  background-color: #A32C2E;
+  border: 1px solid black;
 }
+
+.elements {
+  
+}
+
 
 nav{
   background: brown;
 }
+
 h1{
   font-size: 35px;
   color: white

@@ -1,14 +1,10 @@
 
 <h1>Admin Dashboard</h1>
-<%= link_to "Analytics Dashboard", admin_analytics_dashboard_path %>
-<%= link_to "Add New Item", new_admin_item_path %>
-
-<%= link_to "View All Items", admin_items_path %>
-
-Full Name: <%= current_user.fullname %>
-Address: <%= current_user.address %>
-
-<%= link_to "Edit Account Details", edit_admin_user_path(current_user)  %>
+<div class="admin-links">
+    <%= link_to "Analytics Dashboard", admin_analytics_dashboard_path %>
+    <%= link_to "Add New Item", new_admin_item_path %>
+    <%= link_to "View All Items", admin_items_path %>
+</div>
 
 <h2>Orders: </h2>
 <div class="orders">
@@ -42,11 +38,19 @@ Address: <%= current_user.address %>
   </div>
 <div class="totals">
   <h3>Totals: </h3>
+  <div class="table"
   <table>
-   <%= link_to 'Ordered', admin_dashboard_path(:type => "ordered"), method: :get %> : <%= Order.ordered_count %> <br><br><br>
-   <%= link_to 'Paid', admin_dashboard_path(:type => "paid"), method: :get %> : <%= Order.paid_count %> <br><br><br>
-    <%= link_to 'Cancelled', admin_dashboard_path(:type => "cancelled"), method: :get %> : <%= Order.cancelled_count %> <br><br><br>
-    <%= link_to 'Completed', admin_dashboard_path(:type => "completed"), method: :get %> : <%= Order.completed_count %> <br><br><br>
+   <%= link_to 'Ordered', admin_dashboard_path(:type => "ordered"), method: :get %> : <%= Order.ordered_count %>
+   <%= link_to 'Paid', admin_dashboard_path(:type => "paid"), method: :get %> : <%= Order.paid_count %>
+    <%= link_to 'Cancelled', admin_dashboard_path(:type => "cancelled"), method: :get %> : <%= Order.cancelled_count %>
+    <%= link_to 'Completed', admin_dashboard_path(:type => "completed"), method: :get %> : <%= Order.completed_count %>
     <%= link_to 'All', admin_dashboard_path %> : <%= Order.all.count %><br><br><br>
   </table>
+</div>
+</div>
+
+<div>
+  Full Name: <%= current_user.fullname %>
+  Address: <%= current_user.address %>
+  <%= link_to "Edit Account Details", edit_admin_user_path(current_user)  %>
 </div>
