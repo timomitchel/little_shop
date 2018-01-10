@@ -1,5 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe Order, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Order do
+  context "relationships" do 
+    it { should belong_to(:user)}
+    it {should have_many(:item_orders)}
+    it {should have_many(:items)}
+  end
+  context "enum" do 
+    it {should define_enum_for :status}
+    
+  end
+  context "class methods" do 
+
+  end
 end
