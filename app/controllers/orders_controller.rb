@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  
   end
 
   def create
@@ -21,7 +22,7 @@ class OrdersController < ApplicationController
       redirect_to cart_path
     end
   end
-  
+
   # def find_category_ids(cart)
   #   items = []
   #   cart.each_key do |item_id|

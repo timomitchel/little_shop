@@ -1,4 +1,6 @@
 <div class="order-show">
+  Ordered by: <%= @order.user.fullname %>
+  Delivery Address: <%= @order.user.address %>
   Order Status: <%= @order.status %>
   Date & Time Ordered: <%= @order.created_at %>
   Date & Time Order is updated: <%= @order.updated_at %>
