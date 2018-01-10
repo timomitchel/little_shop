@@ -70,8 +70,6 @@ a:hover{
 .orders{
   font-size: x-large;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
 }
 
 nav{
@@ -159,6 +157,7 @@ img{
 .order_elements{
   background-color: #a32c2e;
   padding: 20px;
+  margin: 20px;
 }
 
 .back-items {
@@ -173,4 +172,3 @@ img{
   border: groove;
   color: #422101;
 }
-
