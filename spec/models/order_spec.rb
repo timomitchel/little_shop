@@ -26,5 +26,13 @@ describe Order do
       expect(Order.cancelled_count).to eq 2
       expect(Order.completed_count).to eq 1
     end
+    context "instance methods" do 
+      it "responds updates stauses" do 
+        expect(@order.update_status_paid).to eq true
+        expect(@order.update_status_complete).to eq true
+        expect(@order_2.update_status_complete).to eq true
+        expect(@order_3.update_status_complete).to eq true
+      end
+    end
   end
 end
