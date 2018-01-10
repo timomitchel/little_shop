@@ -1,18 +1,7 @@
-<%= form_for @user do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+<div class="form">
+<h2> Edit <%= @user.username %> here! </h2>
+</div>
+<%= render partial: "form" %></br>
 
-  <%= f.label :fullname %>
-  <%= f.text_field :fullname %>
-
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-
-  <%= f.label :state %>
-  <%= f.text_field :state %>
-
-  <%= f.submit "Edit Details" %>
-<% end %>
+<h4><%= link_to "Back to Dashboard", dashboard_path %></h4>
