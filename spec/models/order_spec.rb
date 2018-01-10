@@ -40,7 +40,7 @@ describe Order do
         it "finds items and correctly assigns them" do
           cart = {"1" => 2, "2" => 3}
           category = create(:category)
-          
+
           expect(@order.cart_assignment(cart)).to eq 7.5  
         end
       end
