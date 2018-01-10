@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe Order do
   before(:each) do
+    category = create(:category)    
+    @item = create(:item, id: 1, category: category)
+    @item_2 = create(:item, id: 2, category: category)
     @user = create(:user)
     @order = Order.create(user: @user)
     @order_2 = Order.create(status: 1, user: @user)
@@ -32,6 +35,14 @@ describe Order do
         expect(@order.update_status_complete).to eq true
         expect(@order_2.update_status_complete).to eq true
         expect(@order_3.update_status_complete).to eq true
+      end
+      context "cart assignment" do 
+        it "finds items and correctly assigns them" do
+          cart = {"1" => 2, "2" => 3}
+          category = create(:category)
+          
+          expect(@order.cart_assignment(cart)).to eq 7.5  
+        end
       end
     end
   end
