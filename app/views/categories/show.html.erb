@@ -7,12 +7,17 @@
       <%= link_to item.title, item_path(item) %>
       <%= item.description %>
       $<%= item.price %>
+    </div>
+
     <div class="item_image">
       <img src="<%= asset_path(item.image)%>"/>
     </div>
+
     <div class="cart_button">
       <%= button_to "Add to Cart", carts_path(item_id: item.id), class: "btn btn-danger" %>
     </div>
+
   </div>
+  
   <% end %>
 <%= link_to "Go back to All Items", items_path %>
