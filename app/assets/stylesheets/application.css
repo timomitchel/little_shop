@@ -154,3 +154,7 @@ img{
   display: flex;
   flex-flow: row;
 }
+.order_elements{
+  background-color: #a32c2e;
+  padding: 20px;
+}
