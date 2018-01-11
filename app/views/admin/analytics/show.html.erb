@@ -16,11 +16,13 @@
       <% end %>
       <%= button_to "Sort", admin_analytics_dashboard_path(:type => "sort"), method: :post %><br>
       <div>
-        <% @items.each do |item| %>
-          <%= item.title %>
-          <%= item.status %>
-          <%= item.retire_count %>
+        <% unless @items.nil? %>
+          <% @items.each do |item| %>
+            <%= item.title %>
+            <%= item.status %>
+            <%= item.retire_count %>
           <% end %>
+        <% end %>
       </div><br>
       <%= link_to "Admin Dashboard", admin_dashboard_path %>
 </div>
