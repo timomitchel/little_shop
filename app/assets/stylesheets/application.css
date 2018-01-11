@@ -30,6 +30,7 @@ img {
   background-position: center;
   background-size: cover;
   font-family: serif;
+  padding-bottom: 30px;
  }
  .container{
     display: flex;
@@ -206,4 +207,17 @@ img{
   margin: 30px;
   background-color: #A32C2E;
   border: 1px solid black;
+}
+
+.quantity a {
+  font-size: large;
+  border: none;
+}
+
+.checkout-button a{
+  background-color: #dd5c02;
+  border: none;
+  margin: 20px;
+  border: groove;
+  color: #422101;
 }
