@@ -195,5 +195,15 @@ img{
   text-align: center;
   background-color: #A32C2E;
   border: 1px solid black;
+}
 
+.items-show {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  text-align: center;
+  width: 250px;
+  margin: 30px;
+  background-color: #A32C2E;
+  border: 1px solid black;
 }
