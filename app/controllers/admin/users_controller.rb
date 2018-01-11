@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     order = Order.find(params[:order_id])
-    order.destroy
+    order.cancelled!
     redirect_to admin_dashboard_path
   end
 
