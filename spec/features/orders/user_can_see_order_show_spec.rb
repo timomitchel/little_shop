@@ -34,7 +34,6 @@ describe "As a user" do
       expect(current_path).to eq(user_order_path(@user, @user.orders.last.id))
 
       expect(page).to have_content("Order Status: #{@user.orders.last.status}")
-      expect(page).to have_content("Date & Time Ordered: #{@user.orders.last.created_at}")
       expect(page).to have_content("Total Price: $#{(@user.orders.last.total_price)}")
 
       expect(page).to have_content("Item Quantity: #{(ItemOrder.find_by(order_id: @user.orders.last.id, item_id: @item.id).quantity)}")
