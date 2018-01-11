@@ -38,6 +38,7 @@ class Order < ApplicationRecord
     cart.each do |id, quantity|
        result += Item.find(id).price * quantity
        ItemOrder.create(item_id: id, order_id: self.id, quantity: quantity)
+       CategoryOrder.create(category_id: Item.find(id).category_id , order_id: self.id)
      end
     result
   end

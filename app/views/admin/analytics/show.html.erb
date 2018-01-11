@@ -3,8 +3,8 @@
     <div class="analytics-display">
       <p>User with most orders:<p> <strong><%= User.most_orders_placed %></strong>
       <% @categories.each do |category| %>
-      <p>Highest priced item for <%="#{category.title}"%>:</p> <strong><%= category.highest_priced_item %></strong>
-      <p>Number of Orders for: <%="#{category.title}"%>:</p> <strong><%= category.orders_placed %></strong>
+      <p>Highest priced item for <%="#{category.title.capitalize}"%>:</p> <strong><%= category.highest_priced_item %></strong>
+      <p>Number of Orders for <%="#{category.title.capitalize}"%>:</p> <strong><%= category.orders_placed %></strong>
       <% end %>
     </div><br><br>
     <div class="orders-by-state">
