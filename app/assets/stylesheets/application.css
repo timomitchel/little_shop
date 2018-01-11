@@ -221,3 +221,11 @@ img{
   border: groove;
   color: #422101;
 }
+
+.analytics-dashboard {
+  background-color: #A32C2E;
+  border: 1px solid black;
+  width: 600px;
+  margin: 30px;
+  padding: 20px;
+}
