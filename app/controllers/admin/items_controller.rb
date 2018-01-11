@@ -39,6 +39,7 @@ class Admin::ItemsController < Admin::BaseController
       item.update(status: 0)
       redirect_to admin_items_path
     elsif params[:update_status] == "Active"
+      item.retired_count
       item.update(status: 1)
       redirect_to admin_items_path
     else

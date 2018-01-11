@@ -15,5 +15,12 @@
     </div><br>
       <% end %>
       <%= button_to "Sort", admin_analytics_dashboard_path(:type => "sort"), method: :post %><br>
-  <%= link_to "Admin Dashboard", admin_dashboard_path %>
+      <div>
+        <% @items.each do |item| %>
+          <%= item.title %>
+          <%= item.status %>
+          <%= item.retire_count %>
+          <% end %>
+      </div><br>
+      <%= link_to "Admin Dashboard", admin_dashboard_path %>
 </div>

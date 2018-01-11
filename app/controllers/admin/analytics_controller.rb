@@ -3,6 +3,7 @@ class Admin::AnalyticsController < Admin::BaseController
   def show
     @orders = Order.organize_states
     @categories = Category.all
+    @items = Item.order_by_retire_count
   end
 
   def update

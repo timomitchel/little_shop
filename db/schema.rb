@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180110154154) do
+ActiveRecord::Schema.define(version: 20180111014532) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,9 +41,10 @@ ActiveRecord::Schema.define(version: 20180110154154) do
     t.string "title"
     t.text "description"
     t.float "price"
-    t.string "image"
+    t.string "image", default: "tea_v_coffee.jpg"
     t.bigint "category_id"
     t.integer "status", default: 0
+    t.integer "retire_count", default: 0
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
