@@ -175,3 +175,16 @@ img{
 .analytics-dashboard{
   font-size: x-large;
 }
+
+.form {
+  font-size: 18px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 250px;
+    background-color: #A32C2E;
+    border: 1px solid black;
+
+}
