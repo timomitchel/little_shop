@@ -158,6 +158,8 @@ img{
   background-color: #a32c2e;
   padding: 20px;
   margin: 20px;
+  border: 1px solid black;
+
 }
 
 .back-items {
@@ -186,5 +188,12 @@ img{
     width: 250px;
     background-color: #A32C2E;
     border: 1px solid black;
+}
+
+.user-show-information {
+  font-size: 18px;
+  text-align: center;
+  background-color: #A32C2E;
+  border: 1px solid black;
 
 }
