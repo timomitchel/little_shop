@@ -4,9 +4,7 @@ Welcome to Keen Bean, an ecommerce web application built on the Ruby on Rails fr
 
 Keen Bean was developed by a group of Student Developers at the Turing School of Software & Design. The developers are part of the Back End Engineering Cohort, specifically Module 2.
 
-Primary contributors are Kelly Jenkins, Timo Tyrell, and Timothy Joo.
-
-Project Manager: Timothy Joo
+Primary contributors are Kelly Jenkins, Timothy Tyrrell, and Timothy Joo.
 
 Secondary Contributors & Code Reviewers: Ilana Corson and Ali Schlereth.
 
@@ -23,18 +21,18 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-  -gem 'rails', '~> 5.1.4'
-  -gem 'pg', '~> 0.18'
-  -gem 'puma', '~> 3.7'
-  -gem 'sass-rails', '~> 5.0'
-  -gem 'uglifier', '>= 1.3.0'
-  -gem 'coffee-rails', '~> 4.2'
-  -gem 'jbuilder', '~> 2.5'
-  -gem 'bcrypt', '~> 3.1.7'
+  gem 'rails', '~> 5.1.4'
+  gem 'pg', '~> 0.18'
+  gem 'puma', '~> 3.7'
+  gem 'sass-rails', '~> 5.0'
+  gem 'uglifier', '~> 1.3.0'
+  gem 'coffee-rails', '~> 4.2'
+  gem 'jbuilder', '~> 2.5'
+  gem 'bcrypt', '~> 3.1.7'
 
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
   group :development, :test do
-    # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-    gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+    gem 'byebug'
     gem 'capybara'
     gem 'launchy'
     gem 'rspec-rails'
