@@ -96,8 +96,8 @@ Keen Bean was developed by a group of Student Developers at the Turing School of
 
 ## Developers
 Primary contributors:
-[Kelley Jenkins](https://github.com/kelleyjenkins) 
-[Timothy Tyrrell](https://github.com/timomitchel)
-[Timothy Joo](https://github.com/Tyjoo26)
+- [Kelley Jenkins](https://github.com/kelleyjenkins) 
+- [Timothy Tyrrell](https://github.com/timomitchel)
+- [Timothy Joo](https://github.com/Tyjoo26)
 
 Secondary Contributors & Code Reviewers: Ilana Corson and Ali Schlereth.
