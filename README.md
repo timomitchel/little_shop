@@ -4,7 +4,7 @@ Welcome to Keen Bean, an ecommerce web application built on the Ruby on Rails fr
 
 ## Table of Contents:
 
-1)Gemfile Setup
+#### 1) Gemfile Setup
 
 ::Please include the following code below in your Gemfile
 
@@ -24,7 +24,7 @@ end
   gem 'jbuilder', '>= 2.5'
   gem 'bcrypt', '>= 3.1.7'
 ```
-# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+### Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
 ```
   group :development, :test do
@@ -53,7 +53,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 Bundle Install
 ```
 
-2) Migration Commands:
+#### 2) Migration Commands:
 
 Rake command to create database:
 ```
@@ -72,8 +72,7 @@ Rake command to seed database:
 rake db:seed
 ```
 
-
-3) Executing the Test Suite
+#### 3) Executing the Test Suite
 
 :: In order to run the test suite, from command line, run ```rspec``` or ```bundle exec rspec``` in order to run the test suite.
 
@@ -85,7 +84,7 @@ rake db:test:prepare
 ```
 bin/rails db:migrate RAILS_ENV=test
 ```
-4) Heroku Deployment instructions
+#### 4) Heroku Deployment Instructions
 
 ::DEPLOY EARLY AND DEPLOY OFTEN
 
