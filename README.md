@@ -2,12 +2,6 @@
 
 Welcome to Keen Bean, an ecommerce web application built on the Ruby on Rails framework. Keen Bean offers Coffee and Tea products and implements foundational web application concepts including, but not limited to, Authentication, Authorization, Carts, Joins Tables, Project Management Workflow implementation/execution, and Image Uploading.
 
-Keen Bean was developed by a group of Student Developers at the Turing School of Software & Design. The developers are part of the Back End Engineering Cohort, specifically Module 2.
-
-Primary contributors are Kelly Jenkins, Timothy Tyrrell, and Timothy Joo.
-
-Secondary Contributors & Code Reviewers: Ilana Corson and Ali Schlereth.
-
 ## Table of Contents:
 
 1)Gemfile Setup
@@ -96,3 +90,14 @@ bin/rails db:migrate RAILS_ENV=test
 ::DEPLOY EARLY AND DEPLOY OFTEN
 
 ::Good luck
+
+## Additional Info
+Keen Bean was developed by a group of Student Developers at the Turing School of Software & Design. The developers are part of the Back End Engineering Cohort, specifically Module 2.
+
+## Developers
+Primary contributors:
+[Kelley Jenkins](https://github.com/kelleyjenkins) 
+[Timothy Tyrrell](https://github.com/timomitchel)
+[Timothy Joo](https://github.com/Tyjoo26)
+
+Secondary Contributors & Code Reviewers: Ilana Corson and Ali Schlereth.
